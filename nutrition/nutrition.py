@@ -7,4 +7,6 @@ fruits = {
 }
 
 fruit = input("Which fruitie worries you man? ").strip().lower()
+if fruit not in fruits:
+    exit()
 print("Calories:", fruits[fruit])
