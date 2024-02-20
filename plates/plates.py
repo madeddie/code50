@@ -8,14 +8,19 @@ def main():
 
 def is_valid(s):
     if not starts_with_2_letters(s):
+        print("starts")
         return False
     elif not min_2_max_6(s):
+        print("minmax")
         return False
-    elif number_in_middle:
+    elif number_in_middle(s):
+        print("middle")
         return False
-    elif first_num_0:
+    elif first_num_0(s):
+        print("first")
         return False
-    elif periods_spaces_punctation_marks:
+    elif periods_spaces_punctation_marks(s):
+        print("punct")
         return False
     else:
         return True
@@ -31,11 +36,11 @@ def min_2_max_6(s):
 # “Numbers cannot be used in the middle of a plate; they must come at the end. For example, AAA222 would be an acceptable … vanity plate; AAA22A would not be acceptable. The first number used cannot be a ‘0’.”
 def number_in_middle(s):
     # TODO
-    return True
+    return False
 
 def first_num_0(s):
     # TODO
-    return True
+    return False
 
 # “No periods, spaces, or punctuation marks are allowed.”
 def periods_spaces_punctation_marks(s):
