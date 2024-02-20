@@ -13,13 +13,20 @@ months = [
     "December"
 ]
 
-input_date = input("Date: ")
 while True:
+    input_date = input("Date: ")
     if '/' in input_date:
         month, day, year = input_date.split('/')
+        month = int(month)
+        day = int(day)
     elif input_date.split(" ")[0] in months:
         txt_month, day, year = input_date.split(" ")
         month = months.index(txt_month) + 1
-        print(f'{year}-{month:02}-{int(day.strip(",")):02}')
+        day = int(day.strip(','))
+    else:
+        continue
 
+    if day > 31 or month > 12:
+        continue
+    break
 print(f'{year}-{int(month):02}-{int(day):02}')
