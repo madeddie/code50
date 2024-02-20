@@ -2,9 +2,9 @@ def main():
     mealtime = convert(input("So you hungry now? ").strip())
     if 8 >= mealtime >= 7:
         print("breakfast time")
-    elif 12 >= mealtime >= 13:
+    elif 13 >= mealtime >= 12:
         print("lunch time")
-    elif 18 >= mealtime >= 19:
+    elif 19 >= mealtime >= 18:
         print("dinner time")
 
 
