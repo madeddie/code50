@@ -39,8 +39,8 @@ def number_in_middle(s):
     return False
 
 def first_num_0(s):
-    # TODO
-    return False
+    for char in s:
+        return char.isdigit and char != "0"
 
 # “No periods, spaces, or punctuation marks are allowed.”
 def periods_spaces_punctation_marks(s):
