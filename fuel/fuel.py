@@ -1,3 +1,4 @@
 fraction = input("Fraction: ")
 
-print
+percentage
+print(int())
