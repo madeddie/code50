@@ -14,12 +14,10 @@ total = 0
 
 while True:
     try:
-        item = input().strip().lower()
+        item = input("Item: ").strip().lower()
         if item in menu:
             total += menu[item]
-            print("$" + round(total, 2))
+            print("$" + str(round(total, 2)))
         continue
     except EOFError:
         break
-
-    
