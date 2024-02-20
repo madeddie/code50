@@ -23,7 +23,7 @@ while True:
         day = int(day)
     elif input_date.split(" ")[0] in months:
         if ',' not in input_date:
-            
+            continue
         txt_month, day, year = input_date.split(" ")
         month = months.index(txt_month) + 1
         day = int(day.strip(','))
