@@ -1,5 +1,5 @@
 while True:
   fraction = input("Fraction: ")
-  x, 6
+  x, y = fraction.split("/")
 percentage
 print(int())
