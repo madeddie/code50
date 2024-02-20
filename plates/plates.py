@@ -44,6 +44,6 @@ def first_num_0(s):
 
 # “No periods, spaces, or punctuation marks are allowed.”
 def periods_spaces_punctation_marks(s):
-    return s.isalnum()
+    return not s.isalnum()
 
 main()
