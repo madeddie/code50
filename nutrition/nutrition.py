@@ -5,3 +5,6 @@ fruits = {
     "pear": 100,
     "sweet cherries": 100
 }
+
+fruit = input("Which fruitie worries you man? ").strip().lower()
+print("Calories:", fruits[fruit])
