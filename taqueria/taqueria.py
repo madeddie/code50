@@ -20,4 +20,5 @@ while True:
             print(f'${total:.2f}')
         continue
     except EOFError:
+        print()
         break
