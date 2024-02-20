@@ -8,19 +8,14 @@ def main():
 
 def is_valid(s):
     if not starts_with_2_letters(s):
-        print("starts")
         return False
     elif not min_2_max_6(s):
-        print("minmax")
         return False
     elif number_in_middle(s):
-        print("middle")
         return False
     elif first_num_0(s):
-        print("first")
         return False
     elif periods_spaces_punctation_marks(s):
-        print("punct")
         return False
     else:
         return True
@@ -37,12 +32,11 @@ def min_2_max_6(s):
 def number_in_middle(s):
     found_digit = False
     for char in s:
-        print(char)
         if char.isdigit():
             found_digit = True
-        elif char.isalpha() and found_digit:
+        elif char.isalpha() and found_digit == True:
             return True
-        return False
+    return False
 
 def first_num_0(s):
     for char in s:
