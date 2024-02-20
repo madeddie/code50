@@ -1,5 +1,5 @@
 while True:
   fraction = input("Fraction: ")
-  if
+  x, 6
 percentage
 print(int())
