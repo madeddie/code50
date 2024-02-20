@@ -1,0 +1,3 @@
+fraction = input("Fraction: ")
+
+print
