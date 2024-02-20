@@ -17,7 +17,7 @@ while True:
         item = input("Item: ").strip().lower()
         if item in menu:
             total += menu[item]
-            print("$" + str(round(total, 2)))
+            print(f'${total:.2}')
         continue
     except EOFError:
         break
