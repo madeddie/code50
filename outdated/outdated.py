@@ -14,7 +14,7 @@ months = [
 ]
 
 while True:
-    input_date = input("Date: ")
+    input_date = input("Date: ").strip()
     if '/' in input_date:
         month, day, year = input_date.split('/')
         month = int(month)
