@@ -18,11 +18,13 @@ while True:
     if '/' in input_date:
         month, day, year = input_date.split('/')
         if month.isalpha:
+            print("month alpha")
             continue
         month = int(month)
         day = int(day)
     elif input_date.split(" ")[0] in months:
         if ',' not in input_date:
+            print(", not in input")
             continue
         txt_month, day, year = input_date.split(" ")
         month = months.index(txt_month) + 1
@@ -31,6 +33,7 @@ while True:
         continue
 
     if day > 31 or month > 12:
+        print("day or month too big")
         continue
     break
 print(f'{year}-{int(month):02}-{int(day):02}')
