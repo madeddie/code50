@@ -1,7 +1,11 @@
 def main():
     mealtime = convert(input("So you hungry now? ").strip())
     if 8 >= mealtime > 7:
-        print
+        print("breakfast time")
+    elif 12 >= mealtime > 13:
+        print("lunch time")
+    elif 18 >= mealtime > 19:
+        print("dinner time")
 
 
 def convert(time):
@@ -12,4 +16,3 @@ def convert(time):
 
 if __name__ == "__main__":
     main()
-Hints
