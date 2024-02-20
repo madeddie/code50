@@ -17,9 +17,9 @@ while True:
     input_date = input("Date: ").strip()
     if '/' in input_date:
         month, day, year = input_date.split('/')
+        month = int(month)
         if month.isalpha:
             continue
-        month = int(month)
         day = int(day)
     elif input_date.split(" ")[0] in months:
         if ',' not in input_date:
