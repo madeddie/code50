@@ -40,7 +40,8 @@ def number_in_middle(s):
 
 def first_num_0(s):
     for char in s:
-        return char.isdigit and char != "0"
+        if char.isdigit():
+            return char == "0"
 
 # “No periods, spaces, or punctuation marks are allowed.”
 def periods_spaces_punctation_marks(s):
