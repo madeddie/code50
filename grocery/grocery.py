@@ -6,5 +6,6 @@ while True:
         grocery_list.setdefault(item, 0)
         grocery_list[item] += 1
     except EOFError:
-        print(dict(sorted(grocery_list.items())))
+        for item in sorted(grocery_list.items()):
+            print(item[1], item[0])
         exit()
