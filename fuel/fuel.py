@@ -3,7 +3,7 @@ while True:
     fraction = input("Fraction: ")
     x, y = fraction.split("/")
     percentage = int(int(x) / int(y) * 100)
-    print(percentage + "%"1/)
+    print(str(percentage) + "%")
     break
   except:
-    continue
+    raise
