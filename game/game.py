@@ -1,5 +1,5 @@
 import random
 
-level = None
-
 while True:
+    level = input("Level: ")
+    if level
