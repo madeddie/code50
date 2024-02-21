@@ -23,4 +23,12 @@ def get_guess():
 
     return guess
 
-
+while True:
+    guess = get_guess()
+    if guess == random_val:
+        print("Just Right!")
+        break
+    elif guess > random_val:
+        print("Too Large!")
+    else:
+        print("Too Small!")
