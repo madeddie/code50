@@ -43,11 +43,11 @@ def generate_integer(level):
     if level not in [1, 2, 3]:
         raise ValueError
     if level == 1:
-        return random.randrange(0, 9)
+        return random.randrange(0, 10)
     elif level == 2:
-        return random.randrange(10,99)
+        return random.randrange(10,100)
     else:
-        return random.randrange(100,999)
+        return random.randrange(100,1000)
 
 if __name__ == "__main__":
     main()
