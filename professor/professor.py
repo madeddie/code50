@@ -41,9 +41,11 @@ def generate_integer(level):
     if level not in [1, 2, 3]:
         raise ValueError
     if level == 1:
-        return random.randrange((10 ** (level - 1)) -1, (10 ** level) -1)
+        return random.randrange(0, 9)
+    elif level == 2:
+        return random.randrange(10,99)
     else:
-        return random.randrange(10 ** (level - 1), 10 ** level)
+        return random.randrange(100,999)
 
 def generate_problems(level):
     problems = []
