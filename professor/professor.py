@@ -3,6 +3,7 @@ import sys
 
 def main():
     level = get_level()
+    score = 0
     problems = []
 
     for i in range(10):
@@ -16,11 +17,15 @@ def main():
                 print("EEE")
                 tries -= 1
             elif int(answer) == problem[0] + problem[1]:
+                score += 1
                 break
             else:
                 print("EEE")
                 tries -= 1
+        else:
+            print(f"{problem[0]} + {problem[1]} = {problem[0] + problem[1]}")
 
+    print(f"Score: {score}")
 
 def get_level():
     while True:
