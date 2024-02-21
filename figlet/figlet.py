@@ -14,6 +14,8 @@ elif len(sys.argv) == 3:
         if not sys.argv[2] in figlet.getFonts():
             sys.exit('Invalid font')
     figlet.setFont(font=sys.argv[2])
+else:
+    sys.exit(f"Usage {sys.argv[0]} [-f|--font FONT]")
 
 output_text = input('Input: ')
 print(figlet.renderText(output_text))
