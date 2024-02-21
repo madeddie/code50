@@ -4,7 +4,7 @@ import sys
 def main():
     level = get_level()
     score = 0
-    problems = generate_problems
+    problems = generate_problems(level)
 
     for problem in problems:
         tries = 3
