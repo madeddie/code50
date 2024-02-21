@@ -1,3 +1,4 @@
+import random
 import sys
 
 while True:
@@ -11,4 +12,6 @@ while True:
     except:
         continue
 
-print(level)
+problems = []
+
+for i in range(10):
