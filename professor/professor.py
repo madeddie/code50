@@ -17,6 +17,10 @@ def get_level():
         except:
             continue
 
+def generate_integer(level):
+    if level not in [1, 2, 3]:
+        raise ValueError
+    
 problems = []
 
 for i in range(10):
