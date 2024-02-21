@@ -18,7 +18,7 @@ def get_guess():
     while True:
         try:
             guess = int(input("Guess: "))
-            if guess < 1:
+            if guess < 0:
                 continue
             break
         except KeyboardInterrupt:
