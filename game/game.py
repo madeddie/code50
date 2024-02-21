@@ -12,7 +12,7 @@ while True:
     except:
         continue
 
-random_val = random.randrange(1, level)
+random_val = random.randrange(1, level + 1)
 
 def get_guess():
     while True:
