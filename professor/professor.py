@@ -4,7 +4,9 @@ import sys
 def main():
     level = get_level()
     score = 0
-    problems = generate_problems(level)
+    problems = []
+    for i in range(10):
+        problems.append((generate_integer(level), generate_integer(level)))
 
     for problem in problems:
         tries = 3
@@ -46,12 +48,6 @@ def generate_integer(level):
         return random.randrange(10,99)
     else:
         return random.randrange(100,999)
-
-def generate_problems(level):
-    problems = []
-    for i in range(10):
-        problems.append((generate_integer(level), generate_integer(level)))
-    return problems
 
 if __name__ == "__main__":
     main()
