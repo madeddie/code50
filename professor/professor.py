@@ -20,4 +20,4 @@ for i in range(10):
 
 for problem in problems:
     while True:
-        answer = input(f"{problem[0]} + {problem[1]})
+        answer = input(f"{problem[0]} + {problem[1]}")
