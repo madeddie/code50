@@ -1,4 +1,5 @@
 import random
+import sys
 
 while True:
     try:
@@ -6,6 +7,8 @@ while True:
         if level < 1:
             continue
         break
+    except KeyboardInterrupt:
+        sys.exit()
     except:
         continue
 
@@ -18,6 +21,8 @@ def get_guess():
             if guess < 1:
                 continue
             break
+        except KeyboardInterrupt:
+            sys.exit()
         except:
             continue
 
