@@ -1,17 +1,21 @@
 import random
 import sys
 
-while True:
-    try:
-        level = int(input("Level: "))
-        if level in [1, 2, 3]:
-            break
-        else:
+def main():
+    level = get_level()
+
+def get_level():
+    while True:
+        try:
+            level = int(input("Level: "))
+            if level in [1, 2, 3]:
+                return level
+            else:
+                continue
+        except KeyboardInterrupt:
+            sys.exit()
+        except:
             continue
-    except KeyboardInterrupt:
-        sys.exit()
-    except:
-        continue
 
 problems = []
 
