@@ -18,4 +18,6 @@ problems = []
 for i in range(10):
     problems.append((random.randrange(10 ** (level - 1), 10 ** level), random.randrange(10 ** (level - 1), 10 ** level)))
 
-print(problems)
+for problem in problems:
+    while True:
+        answer = input(f"{problem[0]} + {problem[1]})
