@@ -16,4 +16,4 @@ while True:
 problems = []
 
 for i in range(10):
-    problems.append(random.randrange())
+    problems.append(random.randrange(10, 10 ** level))
