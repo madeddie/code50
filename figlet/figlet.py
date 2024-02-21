@@ -15,4 +15,4 @@ elif len(sys.argv) == 3:
             sys.exit('Invalid font')
     font = sys.argv[2]
 
-print(f'font: {font}')
+output_text = input('Input: ')
