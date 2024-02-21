@@ -48,4 +48,5 @@ def generate_problems(level):
         problems.append((generate_integer(level), generate_integer(level)))
     return problems
 
-main()
+if __name__ == "__main__":
+    main()
