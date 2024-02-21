@@ -21,3 +21,6 @@ for i in range(10):
 for problem in problems:
     while True:
         answer = input(f"{problem[0]} + {problem[1]}")
+        if answer == problem[0] + problem[1]:
+            continue
+        else:
