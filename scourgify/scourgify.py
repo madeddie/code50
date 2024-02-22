@@ -18,5 +18,6 @@ except "FileNotFoundError":
     sys.exit("File does not exist")
 
 with open(outfile, "w") as csvfile:
-    writer = csv.DictWriter(csvfile)
+    writer = csv.DictWriter(csvfile, after[0].keys())
+    writer.writeheader()
     writer.writerows(after)
