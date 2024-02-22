@@ -13,10 +13,11 @@ def convert(fraction):
     x, y = fraction.split("/")
     if not x.isdecimal() or not y.isdecimal():
        raise ValueError
-    elif int(x) > int(y):
-       raise ValueError
     elif int(y) == 0:
        raise ZeroDivisionError
+    elif int(x) > int(y):
+       raise ValueError
+
     return round(int(x) / int(y) * 100)
 
 
