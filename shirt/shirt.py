@@ -1,6 +1,6 @@
 import sys
 
-from PIL import Image
+from PIL import Image, ImageOps
 
 
 def check_ext(filename):
@@ -26,4 +26,5 @@ except "FileNotFoundError":
     sys.exit(f"{infile} does not exist")
 #output = photo.paste(shirt, shirt)
 
+infile_resized = ImageOps.fit(im, size)
 print(infile.size)
