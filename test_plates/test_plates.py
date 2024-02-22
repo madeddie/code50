@@ -13,3 +13,14 @@ def test_numbers_at_end():
     assert is_valid("AB123") == True
     assert is_valid("A123B") == False
     assert is_valid("123AB") == False
+
+def test_first_number_0():
+    assert is_valid("AB123") == True
+    assert is_valid("AB012") == False
+
+def test_nothing_but_alnum():
+    assert is_valid("AB123") == True
+    assert is_valid("AB123!") == False
+    assert is_valid("AB 123") == False
+    assert is_valid("AB12.3") == False
+    assert is_valid("AB,123") == False
