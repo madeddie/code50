@@ -8,9 +8,11 @@ elif not sys.argv[1].endswith(".py"):
     sys.exit("Not a Python file")
 else:
     filename = sys.argv[1]
+    lines = []
     try:
         with open(filename, "r") as file:
-            lines = file.readlines()
+            for line in file.readlines():
+                if line and not line.startswith('#')
     except "FileNotFoundError":
         sys.exit("File does not exist")
 
