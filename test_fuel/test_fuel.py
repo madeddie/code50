@@ -12,7 +12,7 @@ def test_convert_fail_x_gt_y():
 
 def test_convert_y_0():
     with pytest.raises(ZeroDivisionError):
-        convert("2/0")
+        convert("0/0")
 
 def test_gauge_empty():
     assert gauge(1) == "E"
