@@ -8,3 +8,12 @@ def test_uppercase():
 
 def test_mixedcase():
     assert shorten("This Is A Test") == "Ths s  Tst"
+
+def test_noreplace():
+    assert shorten("Nthng hppns") == "Nthng hppns"
+
+def test_numbers():
+    assert shorten("Testing 123") == "Tstng 123"
+
+def test_punctuation():
+    assert shorten("This is a test?!") == "Ths s  tst?!"
