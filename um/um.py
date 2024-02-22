@@ -7,10 +7,7 @@ def main():
 
 
 def count(s):
-    ...
-
-
-...
+    return len(re.findall('[^\w]um[^\w]', s))
 
 
 if __name__ == "__main__":
