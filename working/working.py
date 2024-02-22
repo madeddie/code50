@@ -16,12 +16,20 @@ def parse_time(s):
     if int(hour) < 1 or int(hour) > 12 or int(minute) < 0 or int(minute) > 59:
         raise ValueError
 
-    return(hour, minute, meridiem)
+    return(int(hour), int(minute), meridiem)
+
+def generate_24hr(hour, minute, meridiem):
+    if meridiem == "PM" and hour > 12:
+        hour = hour + 12
+    return(f"{hour:02}:{minute:02}")
 
 def convert(s):
-    start, stop = re.search("(.*? (?:AM|PM)) to (.*? (?:AM|PM))", s).groups()
-    hour, minute, meridiem = parse_time(start)
+    output = []
+    for group in re.search("(.*? (?:AM|PM)) to (.*? (?:AM|PM))", s).groups():
+        hour, minute, meridiem = parse_time(group)
+        output.append(generate_24hr(hour, minute, meridiem))
 
+    return(" to ".join(output))
 
 if __name__ == "__main__":
     main()
