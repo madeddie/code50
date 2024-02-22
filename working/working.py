@@ -14,7 +14,7 @@ def parse_time(s):
         minute = 0
 
     print(hour, minute)
-    if 1 < int(hour) > 12 or 0 < int(minute) > 60:
+    if int(hour) < 1 or int(hour) > 12 or int(minute) < 0 or int(minute) > 60:
         raise ValueError
 
 
