@@ -1,5 +1,4 @@
 import re
-import sys
 
 
 def main():
@@ -25,7 +24,11 @@ def generate_24hr(hour, minute, meridiem):
 
 def convert(s):
     output = []
-    for group in re.search("(.*? (?:AM|PM)) to (.*? (?:AM|PM))", s).groups():
+    res = re.search("(.*? (?:AM|PM)) to (.*? (?:AM|PM))", s)
+    if not res:
+        raise ValueError
+
+    for group in res.groups():
         hour, minute, meridiem = parse_time(group)
         output.append(generate_24hr(hour, minute, meridiem))
 
