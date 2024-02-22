@@ -8,7 +8,7 @@ def main():
 def parse_time(s):
     time, meridiem = s.split(" ")
     if ":" in time:
-        hour, minute = time.split()
+        hour, minute = time.split(":")
     else:
         hour = time
         minute = 0
