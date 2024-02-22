@@ -13,6 +13,7 @@ def test_numbers_at_end():
     assert is_valid("AB123") == True
     assert is_valid("A123B") == False
     assert is_valid("123AB") == False
+    assert is_valid("CS50P") == False
 
 def test_first_number_0():
     assert is_valid("AB123") == True
