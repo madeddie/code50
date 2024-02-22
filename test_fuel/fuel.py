@@ -3,7 +3,8 @@ def main():
 
 
 def convert(fraction):
-    ...
+    x, y = fraction.split("/")
+    return round(int(x) / int(y) * 100)
 
 
 def gauge(percentage):
