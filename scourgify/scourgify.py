@@ -12,7 +12,11 @@ try:
     with open(infile, "r") as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
-            firstname, lastname = row.split(", ")
-            after.append{}
+            firstname, lastname = row["name"].split(", ")
+            after.append({"first": firstname, "last": lastname, "house": row["house"]})
 except "FileNotFoundError":
     sys.exit("File does not exist")
+
+try:
+    with open(outfile,)
+print(after)
