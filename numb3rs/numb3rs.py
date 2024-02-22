@@ -11,8 +11,8 @@ def validate(ip):
     for part in parts:
         if 0 > int(part) > 255:
             return False
-        else:
-            return True
+
+        return True
 
 
 if __name__ == "__main__":
