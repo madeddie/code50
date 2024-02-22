@@ -17,6 +17,6 @@ try:
 except "FileNotFoundError":
     sys.exit("File does not exist")
 
-try:
-    with open(outfile,)
-print(after)
+with open(outfile, "w") as csvfile:
+    writer = csv.DictWriter(csvfile)
+    writer.writerows(after)
