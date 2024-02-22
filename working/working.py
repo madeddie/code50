@@ -13,14 +13,14 @@ def parse_time(s):
         hour = time
         minute = 0
 
-    print(hour, minute)
-    if int(hour) < 1 or int(hour) > 12 or int(minute) < 0 or int(minute) > 60:
+    if int(hour) < 1 or int(hour) > 12 or int(minute) < 0 or int(minute) > 59:
         raise ValueError
 
+    return(hour, minute, meridiem)
 
 def convert(s):
     start, stop = re.search("(.*? (?:AM|PM)) to (.*? (?:AM|PM))", s).groups()
-    parse_time(start)
+    hour, minute, meridiem = parse_time(start)
 
 
 if __name__ == "__main__":
