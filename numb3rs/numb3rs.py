@@ -9,7 +9,7 @@ def main():
 def validate(ip):
     parts = ip.split(".")
     for part in parts:
-        if 0 > int(part) > 255:
+        if 0 < int(part) > 255:
             return False
 
     return True
