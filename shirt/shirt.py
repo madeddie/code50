@@ -29,5 +29,5 @@ except "FileNotFoundError":
     sys.exit(f"{infile} does not exist")
 
 inimage_resized = ImageOps.fit(inimage, shirt.size)
-inimage_resized.paste(shirt)
+inimage_resized.paste(shirt, shirt)
 inimage_resized.save(outfile)
