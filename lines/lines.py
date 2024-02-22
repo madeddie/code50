@@ -12,7 +12,7 @@ else:
     try:
         with open(filename, "r") as file:
             for line in file.readlines():
-                if line and not line.startswith('#'):
+                if line.strip() and not line.startswith('#'):
                     lines.append(line)
     except "FileNotFoundError":
         sys.exit("File does not exist")
