@@ -14,8 +14,6 @@ else:
     try:
         with open(filename, "r") as csvfile:
             reader = csv.DictReader(csvfile)
-            for row in reader:
-                print(row)
-            print(tabulate(reader, tablefmt="grid"))
+            print(tabulate(reader, headers="keys", tablefmt="grid"))
     except "FileNotFoundError":
         sys.exit("File does not exist")
