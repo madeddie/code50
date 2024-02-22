@@ -18,9 +18,9 @@ def parse_time(s):
     return(int(hour), int(minute), meridiem)
 
 def generate_24hr(hour, minute, meridiem):
-    if meridiem == "PM" and hour == 12:
+    if meridiem == "AM" and hour == 12:
         hour = 0
-    elif meridiem == "PM":
+    elif meridiem == "PM" and hour < 12:
         hour = hour + 12
     return(f"{hour:02}:{minute:02}")
 
