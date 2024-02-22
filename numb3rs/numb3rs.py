@@ -7,7 +7,9 @@ def main():
 
 
 def validate(ip):
-    ...
+    parts = ip.split(".")
+    for part in parts:
+        if 0 > part > 255
 
 
 ...
