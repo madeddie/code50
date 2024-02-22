@@ -7,7 +7,7 @@ def main():
 
 
 def convert(s):
-    ...
+    res = re.search("(.*? (?:AM|PM)) to (.*? (?:AM|PM))", s)
 
 
 ...
