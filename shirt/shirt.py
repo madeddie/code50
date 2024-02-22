@@ -23,4 +23,5 @@ try:
 except "FileNotFoundError":
     sys.exit("File does not exist")
 
-print(shirt.size)
+#output = photo.paste(shirt, shirt)
+shirt.save('somefile.png')
