@@ -16,10 +16,11 @@ elif check_ext(sys.argv[1]) != check_ext(sys.argv[2]):
     sys.exit(f"Files need to have the same extension")
 else:
     infile = sys.argv[1]
-    try:
-        with open(infile, "r") as shirt:
-            shirt = Image.open(shiu)
-    except "FileNotFoundError":
-        sys.exit("File does not exist")
+    outfile = sys.argv[2]
+
+try:
+    shirt = Image.open("shirt.png")
+except "FileNotFoundError":
+    sys.exit("File does not exist")
 
 print(shirt.size)
