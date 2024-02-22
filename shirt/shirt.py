@@ -1,5 +1,7 @@
 import sys
 
+from PIL import Image
+
 
 def check_ext(filename):
     extension = filename.split(".")[-1]
@@ -16,6 +18,8 @@ else:
     infile = sys.argv[1]
     try:
         with open(infile, "r") as shirt:
-            shirt = Image.open("shirt.png")
+            shirt = Image.open(shiu)
     except "FileNotFoundError":
         sys.exit("File does not exist")
+
+print(shirt.size)
