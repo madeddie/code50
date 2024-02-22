@@ -5,7 +5,7 @@
     "editor.minimap.enabled": false,
     "editor.scrollbar.verticalScrollbarSize": 0,
     "workbench.statusBar.visible": false,
-    "workbench.colorTheme": "GitHub Dark Default",
+    "workbench.colorTheme": "Visual Studio Dark",
     "workbench.colorCustomizations": {
         "[GitHub Dark Default]": {
             "activityBar.background": "#000",
