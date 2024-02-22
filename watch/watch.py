@@ -8,7 +8,8 @@ def main():
 
 def parse(s):
     res = re.search("src=\"https?://.*?\.youtube\.com/embed/(.*?)\"", s)
-    if not res[1]
+    if not res:
+        return None
     return(f"https://youtu.be/{res[1]}")
 
 
