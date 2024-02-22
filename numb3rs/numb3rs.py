@@ -4,6 +4,8 @@ def main():
 
 def validate(ip):
     parts = ip.split(".")
+    if len(parts) != 4:
+        return False
     for part in parts:
         try:
             if 0 < int(part) > 255:
