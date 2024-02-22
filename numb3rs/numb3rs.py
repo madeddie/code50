@@ -12,7 +12,7 @@ def validate(ip):
         if 0 > int(part) > 255:
             return False
 
-        return True
+    return True
 
 
 if __name__ == "__main__":
