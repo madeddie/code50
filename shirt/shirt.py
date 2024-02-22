@@ -14,6 +14,9 @@ if len(sys.argv) != 3:
     sys.exit(f"Usage: {sys.argv[0]} <INPUT> <OUTPUT>")
 elif check_ext(sys.argv[1]) != check_ext(sys.argv[2]):
     sys.exit(f"Files need to have the same extension")
+else:
+    infile = sys.argv[1]
+    outfile = sys.argv[2]
 
 try:
     shirt = Image.open("shirt.png")
@@ -21,10 +24,14 @@ except "FileNotFoundError":
     sys.exit("shirt.png does not exist")
 
 try:
-    infile = Image.open(sys.argv[1])
+    inimage = Image.open(infile)
 except "FileNotFoundError":
     sys.exit(f"{infile} does not exist")
-#output = photo.paste(shirt, shirt)
-print(infile.size)
-infile_resized = ImageOps.fit(infile, shirt.size)
-print(infile_resized.size)
+
+inimage_resized = ImageOps.fit(inimage, shirt.size)
+
+outimage = inimage_resized.paste(shirt)
+
+print(shirt.size)
+print(inimage_resized.size)
+outimage.save(outfile)
