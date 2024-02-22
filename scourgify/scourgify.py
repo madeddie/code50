@@ -7,11 +7,12 @@ if len(sys.argv) != 3:
 infile = sys.argv[1]
 outfile = sys.argv[2]
 
+after = []
 try:
     with open(infile, "r") as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
-            firstname, lastname = row.split()
-            print(row)
+            firstname, lastname = row.split(", ")
+            after.append{}
 except "FileNotFoundError":
     sys.exit("File does not exist")
