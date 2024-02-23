@@ -1,5 +1,4 @@
 import re
-import sys
 
 
 def main():
@@ -7,7 +6,7 @@ def main():
 
 
 def count(s):
-    return len(re.findall('(^|\W)um($|\W)', s, flags=re.I))
+    return len(re.findall(r"(^|\W)um($|\W)", s, flags=re.I))
 
 
 if __name__ == "__main__":
