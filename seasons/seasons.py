@@ -16,7 +16,9 @@ def main():
     minutes = get_minutes(birthdate)
     print(f"{inflect_time(minutes).capitalize()} minutes")
 
-def get_minutes(bd, today=date.today()):
+def get_minutes(bd, today=None):
+    if not today:
+        today = date.today()
     year, month, day = bd.split("-")
     return (today - date(int(year), int(month), int(day))).days * 24 * 60
 
