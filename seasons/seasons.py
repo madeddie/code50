@@ -8,6 +8,8 @@ def main():
 
 
 def minutes(date):
-    today = date.today()
+    year, month, day = date.split("-")
+    return (date.today() - date(int(year), int(month), int(day))).days * 24 * 60
+
 if __name__ == "__main__":
     main()
