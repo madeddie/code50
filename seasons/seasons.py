@@ -17,7 +17,7 @@ def get_minutes(bd):
     return (date.today() - date(int(year), int(month), int(day))).days * 24 * 60
 
 def inflect_time(minutes):
-    return p.number_to_words(minutes)
+    return p.number_to_words(minutes, andword="")
 
 if __name__ == "__main__":
     main()
