@@ -7,7 +7,7 @@ class Jar:
         self.sizeval = 0
 
     def __str__(self):
-        return "🍪" * self.capval
+        return "🍪" * self.sizeval
 
     def deposit(self, n):
         if (self.sizeval + n) > self.capval:
