@@ -1,7 +1,5 @@
 class Jar:
     def __init__(self, capacity=12):
-        if not capacity.isdecimal():
-            raise ValueError
         elif int(capacity) < 0:
             raise ValueError
 
