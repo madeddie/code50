@@ -49,18 +49,21 @@ def fullhouse(hand):
 def straight(hand, type="small"):
     sets = {
         "small": [
-            (1, 2, 3, 4),
-            (2, 3, 4, 5),
-            (3, 4, 5, 6),
+            {1, 2, 3, 4},
+            {2, 3, 4, 5},
+            {3, 4, 5, 6},
         ],
         "large": [
-            (1, 2, 3, 4, 5),
-            (2, 3, 4, 5, 6),
+            {1, 2, 3, 4, 5},
+            {2, 3, 4, 5, 6},
         ]
     }
 
     for checkset in sets[type]:
-        
+        if not checkset - set(hand):
+            return True
+
+    return False
 
 def chance(hand):
     return(sum(hand))
