@@ -63,14 +63,15 @@ def visualize_dice(die_faces, style="ascii"):
     if style == "unicode":
         return " ".join([DICE['UNICODE'][die_face -1] for die_face in die_faces])
     else:
+        output = ""
         die_face_lines = []
         for die_face in die_faces:
             die_face_lines.append(DICE["ASCII"][die_face -1].split("\n"))
 
         for i in range(5):
             for x in die_face_lines:
-                print(x[i], end=" ")
-            print()
+                output += x[i]
+            output += "\n"
 
         # Print identifying numbers under the dice
         for x in range(len(die_faces)):
