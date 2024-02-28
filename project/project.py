@@ -57,6 +57,7 @@ def print_dice(die_faces, style="ascii"):
         print()
     else:
         die_face_lines = []
+        print(die_faces)
         for die_face in die_faces:
             die_face_lines.append(DICE["ASCII"][die_face -1].split("\n"))
 
