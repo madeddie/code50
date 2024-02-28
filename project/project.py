@@ -28,6 +28,17 @@ def xofakind(hand, kind):
             return True
     return False
 
+def fullhouse(hand):
+    twos = False
+    threes = False
+    for value in set(hand):
+        if hand.count(value) == 2:
+            twos = True
+        elif hand.count(value) == 3:
+            threes = True
+
+    return twos and threes
+
 CATEGORIES = {
     "upper": {
         "aces": 1,
