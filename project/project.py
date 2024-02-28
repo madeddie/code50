@@ -22,7 +22,8 @@ DICE = {
 }
 
 def print_dice(die_faces):
-    # die_face_lines = []
+    if 
+    die_face_lines = []
     for die_face in die_faces:
         die_face_lines.append(DICE["ASCII"][die_face -1].split("\n"))
 
