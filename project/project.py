@@ -21,11 +21,11 @@ DICE = {
     ]
 }
 
-die_face_lines = {}
+die_face_lines = []
 def print_dice(die_faces):
-    # die_face_lines = {}
+    # die_face_lines = []
     for die_face in die_faces:
-        die_face_lines[die_face] = DICE["ASCII"][die_face -1].split("\n")
+        die_face_lines.append(DICE["ASCII"][die_face -1].split("\n"))
 
     for i in range(5):
         for x in die_face_lines:
