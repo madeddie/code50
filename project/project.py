@@ -61,9 +61,9 @@ def print_dice(die_faces, style="ascii"):
         raise ValueError
 
     if style == "unicode":
+        res = ""
         for die_face in die_faces:
-            print(DICE["UNICODE"][die_face -1], end=" ")
-        print()
+            res += f"{DICE['UNICODE'][die_face -1]} "
     else:
         die_face_lines = []
         for die_face in die_faces:
