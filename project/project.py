@@ -64,6 +64,7 @@ def main():
             print_dice(dice_faces)
         else:
             dice_to_roll = input("Input which dice to re-roll seperated by spaces: ").split()
+            
             num_to_roll = len(dice_to_roll)
             for dice in dice_to_roll:
                 dice_faces.pop(int(dice) -1)
