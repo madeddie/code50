@@ -54,3 +54,14 @@ def roll_dice(num_of_dice):
         dice_faces.append(randint(1,6))
 
     return dice_faces
+
+def main():
+    dice_faces = []
+    turn = 1
+    while turn < 4:
+        if turn == 1:
+            dice_faces = roll_dice(5)
+        if turn > 1:
+            num_to_roll = int(input("How many dice to roll? "))
+            
+            roll_dice(num_to_roll)
