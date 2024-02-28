@@ -26,6 +26,7 @@ def xofakind(hand, kind):
     score = {}
     score[3] = 17
     score[4] = 24
+    score[5] = 50
     for value in set(hand):
         if hand.count(value) >= kind:
             return score[kind]
@@ -46,7 +47,11 @@ def fullhouse(hand):
     return 0
 
 def straight(hand):
-    
+    ...
+
+def chance(hand):
+    return(sum(hand))
+
 CATEGORIES = {
     "upper": {
         "aces": 1,
@@ -63,8 +68,10 @@ CATEGORIES = {
         # "four": lambda hand: xofakind(hand, kind=4),
         # "fours": lambda hand: xofakind(hand, kind=4),
         "fourofakind": lambda hand: xofakind(hand, kind=4),
+        "yahtzee": lambda hand: xofakind(hand, kind=5),
         # "full": fullhouse,
         "fullhouse": fullhouse,
+        "chance": chance,
     }
 }
 

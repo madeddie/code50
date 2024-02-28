@@ -35,9 +35,18 @@ def test_xofakind():
     assert project.xofakind(hand, 4) == 24
     hand = [1, 2, 3, 4, 5]
     assert project.xofakind(hand, 3) == 0
+    hand = [1, 1, 1, 1, 1]
+    assert project.xofakind(hand, 5) == 50
 
 def test_fullhouse():
     assert project.fullhouse([1, 2, 3, 4, 5]) == 0
     assert project.fullhouse([2, 2, 3, 4, 5]) == 0
     assert project.fullhouse([1, 2, 3, 3, 3]) == 0
     assert project.fullhouse([2, 2, 3, 3, 3]) == 25
+
+def test_straight():
+    ...
+
+def test_chance():
+    assert project.chance([1, 1, 1, 1, 1]) == 5
+    assert project.chance([1, 2, 3, 4, 5]) == 15
