@@ -45,7 +45,16 @@ def test_fullhouse():
     assert project.fullhouse([2, 2, 3, 3, 3]) == 25
 
 def test_straight():
-    ...
+    assert project.straight([1, 2, 3, 5]) == False
+    assert project.straight([1, 1, 2, 3]) == False
+    assert project.straight([1, 2, 3, 4]) == True
+    assert project.straight([2, 3, 4, 5]) == True
+    assert project.straight([3, 4, 5, 6]) == True
+
+    assert project.straight([1, 2, 3, 4, 4], type="large") == False
+    assert project.straight([1, 1, 2, 3, 4], type="large") == False
+    assert project.straight([1, 2, 3, 4, 5], type="large") == True
+    assert project.straight([2, 3, 4, 5, 6], type="large") == True
 
 def test_chance():
     assert project.chance([1, 1, 1, 1, 1]) == 5
