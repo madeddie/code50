@@ -111,7 +111,7 @@ def main():
         if category in [x.lower() for x in CATEGORIES['upper'].keys()]:
             break
 
-    print(section, category)
+    
 
 if __name__ == "__main__":
     main()
