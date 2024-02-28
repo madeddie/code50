@@ -23,10 +23,12 @@ DICE = {
 }
 
 def xofakind(hand, kind):
+    score[3] = 17
+    score[4] = 24
     for value in set(hand):
         if hand.count(value) >= kind:
-            return True
-    return False
+            return score[kind]
+    return 0
 
 def fullhouse(hand):
     twos = False
@@ -38,7 +40,9 @@ def fullhouse(hand):
             threes = True
 
     if twos and threes:
-        return
+        return 25
+
+    return 0
 
 CATEGORIES = {
     "upper": {

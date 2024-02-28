@@ -29,15 +29,15 @@ def test_upper_section_score():
 
 def test_xofakind():
     hand = [1, 1, 1, 2, 3]
-    assert project.xofakind(hand, 3) == True
-    assert project.xofakind(hand, 4) == False
+    assert project.xofakind(hand, 3) == 17
+    assert project.xofakind(hand, 4) == 0
     hand = [1, 2, 2, 2, 2]
-    assert project.xofakind(hand, 4) == True
+    assert project.xofakind(hand, 4) == 24
     hand = [1, 2, 3, 4, 5]
-    assert project.xofakind(hand, 3) == False
+    assert project.xofakind(hand, 3) == 0
 
 def test_fullhouse():
-    assert project.fullhouse([1, 2, 3, 4, 5]) == False
-    assert project.fullhouse([2, 2, 3, 4, 5]) == False
-    assert project.fullhouse([1, 2, 3, 3, 3]) == False
-    assert project.fullhouse([2, 2, 3, 3, 3]) == True
+    assert project.fullhouse([1, 2, 3, 4, 5]) == 0
+    assert project.fullhouse([2, 2, 3, 4, 5]) == 0
+    assert project.fullhouse([1, 2, 3, 3, 3]) == 0
+    assert project.fullhouse([2, 2, 3, 3, 3]) == 25
