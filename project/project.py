@@ -63,7 +63,7 @@ def main():
             dice_faces = roll_dice(5)
             print_dice(dice_faces)
         else:
-            num_to_roll = int(input("How many dice to roll? "))
+            num_to_roll = int(input("Which dice to roll? "))
             dice_faces = dice_faces[0:5-num_to_roll]
             dice_faces.extend(roll_dice(num_to_roll))
             print_dice(dice_faces)
