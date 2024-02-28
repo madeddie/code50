@@ -68,7 +68,10 @@ def main():
             dice_faces = roll_dice(5)
             print_dice(dice_faces)
         else:
-            dice_to_roll = input("Input which dice to re-roll seperated by spaces: ").split()
+            dice_to_roll = input("Input which dice to re-roll seperated by spaces: ").strip().split()
+            if not dice_to_roll:
+                print(")
+                continue
             dice_to_roll = sorted([int(x) for x in dice_to_roll], reverse=True)
             num_to_roll = len(dice_to_roll)
             for dice in dice_to_roll:
