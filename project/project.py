@@ -51,6 +51,6 @@ def print_dice(die_faces, style="ascii"):
 def roll_dice(num_of_dice):
     dice_faces = []
     for _ in range(num_of_dice):
-        dice_faces.append(randrange(6))
+        dice_faces.append(randrange(6) + 1)
 def main():
     dice
