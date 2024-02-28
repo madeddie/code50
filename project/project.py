@@ -22,6 +22,12 @@ DICE = {
     ]
 }
 
+def threeofakind(hand):
+    for value in set(hand):
+        if hand.count(value) >= 3:
+            return True
+    return False
+
 CATEGORIES = {
     "upper": {
         "aces": 1,
@@ -41,12 +47,6 @@ def upper_section_score(hand, category):
         raise ValueError
 
     return sum([x for x in hand if x == CATEGORIES["upper"][category]])
-
-def threeofakind(hand):
-    for value in set(hand):
-        if hand.count(value) >= 3:
-            return True
-    return False
 
 def visualize_dice(die_faces, style="ascii"):
     """
