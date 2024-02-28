@@ -32,7 +32,7 @@ CATEGORIES = {
         "sixes": 6,
     },
     "lower": {
-
+        "three": threeofakind
     }
 }
 
