@@ -114,7 +114,7 @@ def main():
     print(f"Final hand: {dice_faces}")
 
     if section == "upper":
-        print(upper_section_score(dice_faces, category))
+        print(f"Score {section}/{category}: {upper_section_score(dice_faces, category)}")
 
 if __name__ == "__main__":
     main()
