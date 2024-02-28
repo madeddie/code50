@@ -75,8 +75,10 @@ def visualize_dice(die_faces, style="ascii"):
 
         # Print identifying numbers under the dice
         for x in range(len(die_faces)):
-            print(f"   {x+1}   ", end=" ")
-        print()
+            output += f"   {x+1}   "
+        output += "\n"
+
+        return output
 
 def roll_dice(num_of_dice):
     dice_faces = []
