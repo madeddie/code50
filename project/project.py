@@ -3,7 +3,7 @@
 # made by edwin@madtech.cx for CS50 Python
 
 DICE = {
-    "unicode": [
+    "UNICODE": [
         "\u2680",
         "\u2681",
         "\u2682",
@@ -11,7 +11,7 @@ DICE = {
         "\u2684",
         "\u2685",
     ],
-    "ascii": [
+    "ASCII": [
         "-------\n|     |\n|  o  |\n|     |\n-------\n",
         "-------\n|o    |\n|     |\n|    o|\n-------\n",
         "-------\n|o    |\n|  o  |\n|    o|\n-------\n",
