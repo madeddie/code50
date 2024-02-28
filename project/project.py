@@ -30,3 +30,4 @@ def print_dice(die_faces):
     for i in range(5):
         for x in die_face_lines:
             print(x[i])
+        print()
