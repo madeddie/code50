@@ -48,7 +48,7 @@ def threeofakind(hand):
             return True
     return False
 
-def print_dice(die_faces, style="ascii"):
+def visualize_dice(die_faces, style="ascii"):
     """
     Print out the dice in either unicode or ascii art
 
@@ -61,9 +61,7 @@ def print_dice(die_faces, style="ascii"):
         raise ValueError
 
     if style == "unicode":
-        res = ""
-        for die_face in die_faces:
-            res += f"{DICE['UNICODE'][die_face -1]} "
+        return " ".join([DICE['UNICODE'][die_face -1] for die_face in die_faces])
     else:
         die_face_lines = []
         for die_face in die_faces:
@@ -92,7 +90,7 @@ def main():
     while turn < 4:
         if turn == 1:
             dice_faces = roll_dice(5)
-            print_dice(dice_faces)
+            print(visualize_dice(dice_faces))
         else:
             dice_to_roll = input("Input which dice to re-roll seperated by spaces: ").strip().split()
             if not dice_to_roll:
@@ -105,7 +103,7 @@ def main():
                 dice_faces.pop(dice -1)
             dice_faces = dice_faces[0:5-num_to_roll]
             dice_faces.extend(roll_dice(num_to_roll))
-            print_dice(dice_faces)
+            print(visualize_dice(dice_faces))
 
         turn += 1
 
