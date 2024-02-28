@@ -21,7 +21,6 @@ DICE = {
     ]
 }
 
-die_face_lines = []
 def print_dice(die_faces):
     # die_face_lines = []
     for die_face in die_faces:
@@ -29,5 +28,5 @@ def print_dice(die_faces):
 
     for i in range(5):
         for x in die_face_lines:
-            print(x[i])
+            print(x[i], end=" ")
         print()
