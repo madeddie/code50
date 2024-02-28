@@ -30,7 +30,7 @@ CATEGORIES = {
         "fours": 4,
         "fives": 5,
         "sixes": 6,
-    }
+    },
     "lower": {
 
     }
