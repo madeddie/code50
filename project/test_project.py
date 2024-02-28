@@ -27,8 +27,11 @@ def test_upper_section_score():
     assert project.upper_section_score(hand, category="threes") == 9
     assert project.upper_section_score(hand, category="fives") == 20
 
-def test_threeofakind():
+def test_xofakind():
     hand = [1, 1, 1, 2, 3]
-    assert project.threeofakind(hand) == True
+    assert project.xofakind(hand, 3) == True
+    assert project.xofakind(hand, 4) == False
+    hand = [1, 2, 2, 2, 2]
+    assert project.xofakind(hand, 4) == True
     hand = [1, 2, 3, 4, 5]
-    assert project.threeofakind(hand) == False
+    assert project.xofakind(hand, 3) == False

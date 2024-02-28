@@ -24,7 +24,7 @@ DICE = {
 
 def xofakind(hand, kind):
     for value in set(hand):
-        if hand.count(value) >= 3:
+        if hand.count(value) >= kind:
             return True
     return False
 
@@ -38,10 +38,12 @@ CATEGORIES = {
         "sixes": 6,
     },
     "lower": {
-        "three": xofakind(kind=3),
-        "threes": threeofakind,
-        "theeofakind": threeofakind,
-
+        "three": lambda hand: xofakind(hand, kind=3),
+        "threes": lambda hand: xofakind(hand, kind=3),
+        "threeofakind": lambda hand: xofakind(hand, kind=3),
+        "four": lambda hand: xofakind(hand, kind=4),
+        "fours": lambda hand: xofakind(hand, kind=4),
+        "fourofakind": lambda hand: xofakind(hand, kind=4),
     }
 }
 
