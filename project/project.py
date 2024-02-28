@@ -31,6 +31,9 @@ CATEGORIES = {
         "fives": 5,
         "sixes": 6,
     }
+    "lower": {
+
+    }
 }
 
 def upper_section_score(hand, category):
