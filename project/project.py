@@ -22,13 +22,15 @@ DICE = {
     ]
 }
 
-UPPER_CATEGORY = {
-    "Aces": 1,
-    "Twos": 2,
-    "Threes": 3,
-    "Fours": 4,
-    "Fives": 5,
-    "Sixes": 6,
+CATEGORIES = {
+    "upper": {
+        "Aces": 1,
+        "Twos": 2,
+        "Threes": 3,
+        "Fours": 4,
+        "Fives": 5,
+        "Sixes": 6,
+    }
 }
 
 def upper_section_score(hand, category):
@@ -104,7 +106,12 @@ def main():
             break
 
     while True:
-        print(f"Available categories in section {section})
-        category = input("Choose scoring category: ")
+        print(f"Available categories in section {section}:\n{', '.join(CATEGORIES['upper'].keys())}")
+        category = input("Choose scoring category: ").strip().lower()
+        if category in [x.lower() for x in CATEGORIES['upper'].keys()]:
+            break
+
+    print(section, category)
+
 if __name__ == "__main__":
     main()
