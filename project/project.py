@@ -24,20 +24,20 @@ DICE = {
 
 CATEGORIES = {
     "upper": {
-        "Aces": 1,
-        "Twos": 2,
-        "Threes": 3,
-        "Fours": 4,
-        "Fives": 5,
-        "Sixes": 6,
+        "aces": 1,
+        "twos": 2,
+        "threes": 3,
+        "fours": 4,
+        "fives": 5,
+        "sixes": 6,
     }
 }
 
 def upper_section_score(hand, category):
-    if category not in UPPER_CATEGORY.keys():
+    if category not in CATEGORIES["upper"].keys():
         raise ValueError
 
-    return sum([x for x in hand if x == UPPER_CATEGORY[category]])
+    return sum([x for x in hand if x == CATEGORIES["upper"][category]])
 
 def print_dice(die_faces, style="ascii"):
     """
@@ -108,10 +108,11 @@ def main():
     while True:
         print(f"Available categories in section {section}:\n{', '.join(CATEGORIES['upper'].keys())}")
         category = input("Choose scoring category: ").strip().lower()
-        if category in [x.lower() for x in CATEGORIES['upper'].keys()]:
+        if category in CATEGORIES['upper'].keys():
             break
 
-    
+    if section == "upper":
+        print(upper_section_score(dice_faces, category))
 
 if __name__ == "__main__":
     main()
