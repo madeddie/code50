@@ -37,7 +37,8 @@ def fullhouse(hand):
         elif hand.count(value) == 3:
             threes = True
 
-    return twos and threes
+    if twos and threes:
+        return
 
 CATEGORIES = {
     "upper": {
@@ -55,6 +56,8 @@ CATEGORIES = {
         "four": lambda hand: xofakind(hand, kind=4),
         "fours": lambda hand: xofakind(hand, kind=4),
         "fourofakind": lambda hand: xofakind(hand, kind=4),
+        "full": fullhouse,
+        "fullhouse": fullhouse,
     }
 }
 
@@ -141,6 +144,7 @@ def main():
 
     if section == "upper":
         print(f"Score {section}/{category}: {upper_section_score(dice_faces, category)}")
-
+    if section == "lower":
+        print(f"Score {section}/{category}: {})
 if __name__ == "__main__":
     main()

@@ -35,3 +35,9 @@ def test_xofakind():
     assert project.xofakind(hand, 4) == True
     hand = [1, 2, 3, 4, 5]
     assert project.xofakind(hand, 3) == False
+
+def test_fullhouse():
+    assert project.fullhouse([1, 2, 3, 4, 5]) == False
+    assert project.fullhouse([2, 2, 3, 4, 5]) == False
+    assert project.fullhouse([1, 2, 3, 3, 3]) == False
+    assert project.fullhouse([2, 2, 3, 3, 3]) == True
