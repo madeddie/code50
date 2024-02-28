@@ -42,6 +42,12 @@ def upper_section_score(hand, category):
 
     return sum([x for x in hand if x == CATEGORIES["upper"][category]])
 
+def threeofakind(hand):
+    for value in set(hand):
+        if hand.count(value) >= 3:
+            return True
+    return False
+
 def print_dice(die_faces, style="ascii"):
     """
     Print out the dice in either unicode or ascii art
