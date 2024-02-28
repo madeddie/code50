@@ -57,7 +57,6 @@ def print_dice(die_faces, style="ascii"):
         print()
     else:
         die_face_lines = []
-        print(die_faces)
         for die_face in die_faces:
             die_face_lines.append(DICE["ASCII"][die_face -1].split("\n"))
 
@@ -69,10 +68,6 @@ def print_dice(die_faces, style="ascii"):
         # Print identifying numbers under the dice
         for x in range(len(die_faces)):
             print(f"   {x+1}   ", end=" ")
-        print()
-
-        for x in die_faces:
-            print(f"   {x}   ", end=" ")
         print()
 
 def roll_dice(num_of_dice):
