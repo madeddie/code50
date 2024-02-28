@@ -1,7 +1,7 @@
 ####
 # This is a game of yahtzee on the CLI
 # made by edwin@madtech.cx for CS50 Python
-from random import randrange
+from random import randint
 
 DICE = {
     "UNICODE": [
@@ -51,6 +51,6 @@ def print_dice(die_faces, style="ascii"):
 def roll_dice(num_of_dice):
     dice_faces = []
     for _ in range(num_of_dice):
-        dice_faces.append(randrange(6) + 1)
-def main():
-    dice
+        dice_faces.append(randint(1,6))
+
+    return dice_faces
