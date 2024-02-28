@@ -98,6 +98,6 @@ def main():
 
         turn += 1
 
-    
+    section = input("I)
 if __name__ == "__main__":
     main()
