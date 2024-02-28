@@ -48,6 +48,11 @@ def print_dice(die_faces, style="ascii"):
                 print(x[i], end=" ")
             print()
 
+        # Print identifying numbers under the dice
+        for x in range(len(die_faces)):
+            print(f"   {x+1}   ", end=" ")
+        print()
+
 def roll_dice(num_of_dice):
     dice_faces = []
     for _ in range(num_of_dice):
