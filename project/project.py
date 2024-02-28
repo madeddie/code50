@@ -22,7 +22,7 @@ DICE = {
     ]
 }
 
-def threeofakind(hand):
+def xofakind(hand, kind):
     for value in set(hand):
         if hand.count(value) >= 3:
             return True
@@ -38,7 +38,7 @@ CATEGORIES = {
         "sixes": 6,
     },
     "lower": {
-        "three": threeofakind,
+        "three": xofakind(kind=3),
         "threes": threeofakind,
         "theeofakind": threeofakind,
 
