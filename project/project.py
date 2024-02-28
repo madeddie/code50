@@ -70,8 +70,9 @@ def main():
         else:
             dice_to_roll = input("Input which dice to re-roll seperated by spaces: ").strip().split()
             if not dice_to_roll:
-                print(")
-                continue
+                print("Nothing to re-roll")
+                turn += 1
+                break
             dice_to_roll = sorted([int(x) for x in dice_to_roll], reverse=True)
             num_to_roll = len(dice_to_roll)
             for dice in dice_to_roll:
