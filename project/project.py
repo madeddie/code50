@@ -111,6 +111,8 @@ def main():
         if category in CATEGORIES['upper'].keys():
             break
 
+    print(f"Final hand: {dice_faces}")
+
     if section == "upper":
         print(upper_section_score(dice_faces, category))
 
