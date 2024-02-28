@@ -23,6 +23,7 @@ DICE = {
 }
 
 def xofakind(hand, kind):
+    score = {}
     score[3] = 17
     score[4] = 24
     for value in set(hand):
@@ -54,13 +55,13 @@ CATEGORIES = {
         "sixes": 6,
     },
     "lower": {
-        "three": lambda hand: xofakind(hand, kind=3),
-        "threes": lambda hand: xofakind(hand, kind=3),
+        # "three": lambda hand: xofakind(hand, kind=3),
+        # "threes": lambda hand: xofakind(hand, kind=3),
         "threeofakind": lambda hand: xofakind(hand, kind=3),
-        "four": lambda hand: xofakind(hand, kind=4),
-        "fours": lambda hand: xofakind(hand, kind=4),
+        # "four": lambda hand: xofakind(hand, kind=4),
+        # "fours": lambda hand: xofakind(hand, kind=4),
         "fourofakind": lambda hand: xofakind(hand, kind=4),
-        "full": fullhouse,
+        # "full": fullhouse,
         "fullhouse": fullhouse,
     }
 }
@@ -139,16 +140,17 @@ def main():
             break
 
     while True:
-        print(f"Available categories in section {section}:\n{', '.join(CATEGORIES['upper'].keys())}")
+        print(f"Available categories in section {section}:\n{', '.join(CATEGORIES[section].keys())}")
         category = input("Choose scoring category: ").strip().lower()
-        if category in CATEGORIES['upper'].keys():
+        if category in CATEGORIES[section].keys():
             break
 
     print(f"Final hand: {dice_faces}")
 
     if section == "upper":
         print(f"Score {section}/{category}: {upper_section_score(dice_faces, category)}")
-    if section == "lower":
-        print(f"Score {section}/{category}: {})
+    else:
+        print(f"Score {section}/{category}: {CATEGORIES['lower'][category](dice_faces)}")
+
 if __name__ == "__main__":
     main()
