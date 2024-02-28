@@ -98,6 +98,13 @@ def main():
 
         turn += 1
 
-    section = input("I)
+    while True:
+        section = input("Choose upper or lower section: ").strip().lower()
+        if section in ["upper", "lower"]:
+            break
+
+    while True:
+        print(f"Available categories in section {section})
+        category = input("Choose scoring category: ")
 if __name__ == "__main__":
     main()
