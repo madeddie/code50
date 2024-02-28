@@ -3,6 +3,7 @@
 # made by edwin@madtech.cx for CS50 Python
 from random import randint
 
+# This constant defines the characters and ascii art to print the dice
 DICE = {
     "UNICODE": [
         "\u2680",
@@ -23,16 +24,23 @@ DICE = {
 }
 
 def xofakind(hand, kind):
+    """Finds an X amount of equal values in the hand
+    Used for Three of a kind, Four of a kind and Yahtzee (5 of a kind)
+    """
     score = {}
-    score[3] = 17
-    score[4] = 24
-    score[5] = 50
+    score = {
+        3: 17,
+        4: 24,
+        5: 50,
+    }
     for value in set(hand):
         if hand.count(value) >= kind:
             return score[kind]
     return 0
 
 def fullhouse(hand):
+    """Finds if the hand has 2 of the same values and 3 of another value
+    """
     twos = False
     threes = False
     for value in set(hand):
@@ -46,7 +54,14 @@ def fullhouse(hand):
 
     return 0
 
-def straight(hand, type="small"):
+def straight(hand, kind="small"):
+    """Finds straights in the hands, straights being sequential numbers
+    Small straights need 4 sequential numbers, large need 5
+    """
+    score = {
+        "small": 30,
+        "large": 40,
+    }
     sets = {
         "small": [
             {1, 2, 3, 4},
@@ -59,11 +74,11 @@ def straight(hand, type="small"):
         ]
     }
 
-    for checkset in sets[type]:
+    for checkset in sets[kind]:
         if not checkset - set(hand):
-            return True
+            return score[kind]
 
-    return False
+    return 0
 
 def chance(hand):
     return(sum(hand))
