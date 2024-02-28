@@ -59,6 +59,9 @@ def straight(hand, type="small"):
         ]
     }
 
+    for checkset in sets[type]:
+        
+
 def chance(hand):
     return(sum(hand))
 
