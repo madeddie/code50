@@ -63,7 +63,9 @@ def main():
             dice_faces = roll_dice(5)
             print_dice(dice_faces)
         else:
-            num_to_roll = int(input("Input which dice to re-roll seperated by spaces: "))
+            dice_to_roll = input("Input which dice to re-roll seperated by spaces: ").split()
+            for dice in dice_to_roll:
+                dice_faces.pop(int(dice) -1)
             dice_faces = dice_faces[0:5-num_to_roll]
             dice_faces.extend(roll_dice(num_to_roll))
             print_dice(dice_faces)
