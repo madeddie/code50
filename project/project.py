@@ -45,6 +45,8 @@ def fullhouse(hand):
 
     return 0
 
+def straight(hand):
+    
 CATEGORIES = {
     "upper": {
         "aces": 1,
@@ -105,11 +107,11 @@ def visualize_dice(die_faces, style="ascii"):
         return output
 
 def roll_dice(num_of_dice):
-    dice_faces = []
+    hand = []
     for _ in range(num_of_dice):
-        dice_faces.append(randint(1,6))
+        hand.append(randint(1,6))
 
-    return dice_faces
+    return hand
 
 def main():
     dice_faces = []
