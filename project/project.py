@@ -61,7 +61,14 @@ def main():
     while turn < 4:
         if turn == 1:
             dice_faces = roll_dice(5)
-        if turn > 1:
+            print_dice(dice_faces)
+        else:
             num_to_roll = int(input("How many dice to roll? "))
-            
-            roll_dice(num_to_roll)
+            dice_faces = dice_faces[0:5-num_to_roll]
+            dice_faces.append(roll_dice(num_to_roll))
+            print_dice(dice_faces)
+
+        turn += 1
+
+if __name__ == "__main__":
+    main()
