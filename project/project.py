@@ -65,7 +65,7 @@ def main():
         else:
             num_to_roll = int(input("How many dice to roll? "))
             dice_faces = dice_faces[0:5-num_to_roll]
-            dice_faces.append(roll_dice(num_to_roll))
+            dice_faces.extend(roll_dice(num_to_roll))
             print_dice(dice_faces)
 
         turn += 1
