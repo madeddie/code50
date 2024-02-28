@@ -22,6 +22,7 @@ DICE = {
     ]
 }
 
+
 def print_dice(die_faces, style="ascii"):
     """
     Print out the dice in either unicode or ascii art
