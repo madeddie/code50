@@ -22,8 +22,21 @@ DICE = {
     ]
 }
 
+UPPER_CATEGORY = {
+    "Aces": 1,
+    "Twos": 2,
+    "Threes": 3,
+    "Fours": 4,
+    "Fives": 5,
+    "Sixes": 6,
+}
+
 def upper_section_score(hand, category):
-    []
+    if category not in UPPER_CATEGORY.keys():
+        raise ValueError
+
+    return sum([x for x in hand if x == UPPER_CATEGORY[category]])
+
 def print_dice(die_faces, style="ascii"):
     """
     Print out the dice in either unicode or ascii art
@@ -85,5 +98,6 @@ def main():
 
         turn += 1
 
+    
 if __name__ == "__main__":
     main()
