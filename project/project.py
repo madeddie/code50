@@ -64,10 +64,10 @@ def main():
             print_dice(dice_faces)
         else:
             dice_to_roll = input("Input which dice to re-roll seperated by spaces: ").split()
-            
+            dice_to_roll = [int(x) for x in dice_to_roll]
             num_to_roll = len(dice_to_roll)
             for dice in dice_to_roll:
-                dice_faces.pop(int(dice) -1)
+                dice_faces.pop(dice -1)
             dice_faces = dice_faces[0:5-num_to_roll]
             dice_faces.extend(roll_dice(num_to_roll))
             print_dice(dice_faces)
