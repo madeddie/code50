@@ -70,6 +70,10 @@ def print_dice(die_faces, style="ascii"):
             print(f"   {x+1}   ", end=" ")
         print()
 
+        for x in die_faces:
+            print(f"   {x}   ", end=" ")
+        print()
+
 def roll_dice(num_of_dice):
     dice_faces = []
     for _ in range(num_of_dice):
