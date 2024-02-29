@@ -23,13 +23,22 @@ int main(void)
 
 void print_row(int bricks, int height)
 {
-    for (int j = 0; j < height - bricks; j++)
+    for (int i = 0; i < height - bricks; i++)
     {
         printf(" ");
     }
-    for (int i = 0; i < bricks; i++)
+    for (int j = 0; j < bricks; j++)
     {
         printf("#");
+    }
+    printf("  ");
+    for (int k = 0; k < bricks; k++)
+    {
+        printf("#");
+    }
+    for (int l = 0; l < height - bricks; l++)
+    {
+        printf(" ");
     }
     printf("\n");
 }
