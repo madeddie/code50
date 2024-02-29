@@ -36,9 +36,9 @@ void print_row(int bricks, int height)
     {
         printf("#");
     }
-    for (int l = 0; l < height - bricks; l++)
-    {
-        printf(" ");
-    }
+    // for (int l = 0; l < height - bricks; l++)
+    // {
+    //     printf(" ");
+    // }
     printf("\n");
 }
