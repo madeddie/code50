@@ -11,9 +11,9 @@ int main(void)
     {
         cents = get_int("Change owed: ");
     }
-    while (n < 1 || n > 8);
+    while (n < 1);
 
-    // Print a pyramid of that height
+    // Try removing the largest 
     for (int i = 0; i < n; i++)
     {
         // Print row of bricks
