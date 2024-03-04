@@ -7,12 +7,12 @@ int main(void)
     bool valid = false;
     int counteven = 0;
     int countodd = 0;
-    int i = 1;
+    int cardlen = 0;
 
     long ccnum_count = ccnum_orig;
     while (ccnum_count > 0)
     {
-        if (i % 2 == 0)
+        if (cardlen % 2 == 1)
         {
             int res = (ccnum_count % 10) * 2;
             counteven += res / 10;
@@ -23,7 +23,7 @@ int main(void)
             countodd += ccnum_count % 10;
         }
         ccnum_count /= 10;
-        i++;
+        cardlen++;
     }
     int count = counteven + countodd;
     if (count % 10 != 0)
@@ -31,5 +31,13 @@ int main(void)
         printf("INVALID\n");
         return 0;
     }
-    printf("Index: %d\n", i);
+}
+
+bool is_mastercard(int cardnum)
+{
+    while (cardnum > 100)
+    {
+        cardnum /= 10;
+    }
+    if cardnum == 
 }
