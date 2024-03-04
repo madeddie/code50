@@ -1,6 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
 
+#define VISA 
 int main(void)
 {
     long ccnum = get_long("Number: ");
