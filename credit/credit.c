@@ -39,6 +39,8 @@ int main(void)
         case 37:
             if (cardlen == 15)
                 printf("AMEX\n");
+            else
+                printf("INVALID\n");
             break;
         case 51:
         case 52:
@@ -47,6 +49,8 @@ int main(void)
         case 55:
             if (cardlen == 16)
                 printf("MASTERCARD\n");
+            else
+                printf("INVALID\n");
             break;
         case 40:
         case 41:
@@ -60,6 +64,8 @@ int main(void)
         case 49:
             if (cardlen == 13 || cardlen == 16)
                 printf("VISA\n");
+            else
+                printf("INVALID\n");
             break;
         default:
             printf("INVALID\n");
