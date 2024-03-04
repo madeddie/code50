@@ -5,5 +5,6 @@ int main(void)
 {
     string text = "One fish. Two fish. Red fish. Blue fish.";
     // string text = get_string("Text: ");
-    
+    int words = 0;
+
 }
