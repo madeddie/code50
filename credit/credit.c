@@ -1,6 +1,8 @@
 #include <cs50.h>
 #include <stdio.h>
 
+int get_first2(int cardnum);
+
 int main(void)
 {
     long ccnum_orig = get_long("Number: ");
@@ -31,13 +33,21 @@ int main(void)
         printf("INVALID\n");
         return 0;
     }
+    switch(get_first2(ccnum_orig)
+    {
+        case 34:
+            if (cardlen == 16)
+                {
+                    printf("M)
+                }
+    }
 }
 
-bool is_mastercard(int cardnum)
+int get_first2(int cardnum)
 {
     while (cardnum > 100)
     {
         cardnum /= 10;
     }
-    if cardnum == 
+    return cardnum;
 }
