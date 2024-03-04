@@ -1,7 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
 
-int get_first2(int cardnum);
+int get_first2(long cardnum);
 
 int main(void)
 {
@@ -33,7 +33,6 @@ int main(void)
         printf("INVALID\n");
         return 0;
     }
-    printf("cardlen: %d, first2: %d", cardlen, get_first2(ccnum_orig));
     switch(get_first2(ccnum_orig))
     {
         case 34:
@@ -68,7 +67,7 @@ int main(void)
     }
 }
 
-int get_first2(int cardnum)
+int get_first2(long cardnum)
 {
     while (cardnum > 100)
     {
