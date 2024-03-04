@@ -49,6 +49,11 @@ int main(void)
             if (cardlen == 16)
                 printf("MASTERCARD\n");
             break;
+        case 40:
+        case 41:
+        case 42:
+        case 43:
+        
     }
 }
 
