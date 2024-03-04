@@ -33,7 +33,7 @@ int main(void)
         printf("INVALID\n");
         return 0;
     }
-    switch(get_first2(ccnum_orig))
+    switch (get_first2(ccnum_orig))
     {
         case 34:
         case 37:
