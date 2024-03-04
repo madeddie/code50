@@ -1,7 +1,6 @@
 #include <cs50.h>
 #include <stdio.h>
 
-#define VISA ch
 int main(void)
 {
     long ccnum = get_long("Number: ");
@@ -34,3 +33,5 @@ int main(void)
         printf("INVALID\n");
     }
 }
+
+bool is_mastercard()
