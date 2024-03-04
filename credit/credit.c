@@ -35,11 +35,13 @@ int main(void)
     }
     switch(get_first2(ccnum_orig)
     {
-        case 34:
+        case 51:
+        case 52:
+        case 53:
+        case 54:
+        case 55:
             if (cardlen == 16)
-                {
-                    printf("M)
-                }
+                printf("MASTERCARD")
     }
 }
 
