@@ -20,6 +20,7 @@ int main(void)
             punctuation++;
     }
     float L = (letters * 100) / ((spaces + 1) * 100);
-    float index = 0.0588 * L - 0.296 * S - 15.8
-    printf("letters %d, spaces %d, punct %d\n", letters, spaces, punctuation);
+    float S = (punctuation * 100) / ((spaces + 1) * 100);
+    float index = 0.0588 * L - 0.296 * S - 15.8;
+    printf("index: %f\n");
 }
