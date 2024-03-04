@@ -33,7 +33,7 @@ int main(void)
         printf("INVALID\n");
         return 0;
     }
-    switch(get_first2(ccnum_orig)
+    switch(get_first2(ccnum_orig))
     {
         case 51:
         case 52:
@@ -41,7 +41,8 @@ int main(void)
         case 54:
         case 55:
             if (cardlen == 16)
-                printf("MASTERCARD")
+                printf("MASTERCARD");
+            break;
     }
 }
 
