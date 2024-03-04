@@ -2,6 +2,7 @@
 #include <stdio.h>
 
 int get_first2(int cardnum);
+int get_first1(int cardnum);
 
 int main(void)
 {
@@ -35,13 +36,18 @@ int main(void)
     }
     switch(get_first2(ccnum_orig))
     {
+        case 34:
+        case 37:
+            if (cardlen == 15)
+                printf("AMEX\n");
+            break;
         case 51:
         case 52:
         case 53:
         case 54:
         case 55:
             if (cardlen == 16)
-                printf("MASTERCARD");
+                printf("MASTERCARD\n");
             break;
     }
 }
@@ -49,6 +55,15 @@ int main(void)
 int get_first2(int cardnum)
 {
     while (cardnum > 100)
+    {
+        cardnum /= 10;
+    }
+    return cardnum;
+}
+
+int get_first1(int cardnum)
+{
+    while (cardnum > 10)
     {
         cardnum /= 10;
     }
