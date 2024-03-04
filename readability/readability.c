@@ -12,9 +12,11 @@ int main(void)
     for (i = 0; len = strlen(text); i < len; i++)
     {
         if (isalpha(text[i]))
-            letters++
+            letters++;
         else if (isblank(text[i]))
-            spaces++
+            spaces++;
         else if (text[i] == '!' || text[i] == '?' || text[i] == '.')
+            punctuation++;
     }
+    printf("letters %d, spaces %d, punct %d", letters, spaces, punctuation);
 }
