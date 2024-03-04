@@ -1,22 +1,39 @@
 #include <cs50.h>
 #include <stdio.h>
 
-void remove_largest(int cents);
-
 int main(void)
 {
-    // Prompt the user for the required change in cents
-    int n;
-    do
+    // Prompt the user for the required change in cents as positive integer
+    int cents = -1;
+    while (cents < 0)
     {
         cents = get_int("Change owed: ");
     }
-    while (n < 1);
 
-    // Try removing the largest 
-    for (int i = 0; i < n; i++)
+    int changecoins = 0;
+    // delete 25, 10, 5 or 1 cents
+    while (cents > 0)
     {
-        // Print row of bricks
-        print_row(i + 1, n);
+        if (cents >= 25)
+        {
+            cents -= 25;
+            changecoins++;
+        }
+        else if (cents >= 10)
+        {
+            cents -= 10;
+            changecoins++;
+        }
+        else if (cents >= 5)
+        {
+            cents -= 5;
+            changecoins++;
+        }
+        else
+        {
+            cents -= 1;
+            changecoins++;
+        }
     }
+    printf("%d\n", changecoins);
 }
