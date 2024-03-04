@@ -2,7 +2,6 @@
 #include <stdio.h>
 
 int get_first2(int cardnum);
-int get_first1(int cardnum);
 
 int main(void)
 {
@@ -53,22 +52,24 @@ int main(void)
         case 41:
         case 42:
         case 43:
-        
+        case 44:
+        case 45:
+        case 46:
+        case 47:
+        case 48:
+        case 49:
+            if (cardlen == 13 || cardlen == 16)
+                printf("VISA\n");
+            break;
+        default:
+            printf("INVALID\n");
+            break;
     }
 }
 
 int get_first2(int cardnum)
 {
     while (cardnum > 100)
-    {
-        cardnum /= 10;
-    }
-    return cardnum;
-}
-
-int get_first1(int cardnum)
-{
-    while (cardnum > 10)
     {
         cardnum /= 10;
     }
