@@ -1,5 +1,6 @@
 #include <cs50.h>
 #include <stdio.h>
+#include <string.h>
 
 int main(void)
 {
@@ -9,7 +10,7 @@ int main(void)
     int spaces = 0;
     int punctuation = 0;
 
-    for (i = 0; len = strlen(text); i < len; i++)
+    for (int i = 0; len = strlen(text); i < len; i++)
     {
         if (isalpha(text[i]))
             letters++;
