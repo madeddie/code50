@@ -3,7 +3,7 @@
 
 int main(void)
 {
-    long ccnum = input_long("Number: ")
+    long ccnum = get_long("Number: ");
     int counteven = 0;
     int countodd = 0;
     int i = 1;
@@ -12,7 +12,7 @@ int main(void)
     {
         if (i % 2 == 0)
         {
-            res = (ccnum % 10) * 2;
+            int res = (ccnum % 10) * 2;
             counteven += res / 10;
             counteven += res % 10;
         }
