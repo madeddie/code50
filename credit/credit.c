@@ -33,6 +33,7 @@ int main(void)
         printf("INVALID\n");
         return 0;
     }
+    printf("cardlen: %d, first2: %d", cardlen, get_first2(ccnum_orig));
     switch(get_first2(ccnum_orig))
     {
         case 34:
