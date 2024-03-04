@@ -31,5 +31,5 @@ int main(void)
         printf("INVALID\n");
         return 0;
     }
-    
+    printf("Index: %d\n", i);
 }
