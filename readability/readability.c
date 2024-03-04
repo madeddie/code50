@@ -19,8 +19,8 @@ int main(void)
         else if (text[i] == '!' || text[i] == '?' || text[i] == '.')
             punctuation++;
     }
-    float L = (letters * 100) / ((spaces + 1) * 100);
-    float S = (punctuation * 100) / ((spaces + 1) * 100);
+    float L = (letters / (spaces + 1)) * 100;
+    float S = (punctuation / (spaces + 1)) * 100;
     float index = 0.0588 * L - 0.296 * S - 15.8;
     printf("index: %f\n", index);
 }
