@@ -7,6 +7,7 @@
 int main(void)
 {
     string text = get_string("Text: ");
+
     int letters = 0;
     int words = 0;
     int sentences = 0;
@@ -14,10 +15,14 @@ int main(void)
     for (int i = 0, len = strlen(text); i < len; i++)
     {
         if (isalpha(text[i]))
+            // Any alphabetical char counts for letters
             letters++;
         else if (isblank(text[i]))
+            // Words are delineated by spaces, - 1 word, since there's no space at the end
+            // Fixing that after the loop
             words++;
         else if (text[i] == '!' || text[i] == '?' || text[i] == '.')
+            // All sentences end with a ., ! or ?
             sentences++;
     }
     // Add one word because the last one doesn't have a space after it.
