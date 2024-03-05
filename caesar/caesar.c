@@ -1,6 +1,7 @@
 #include <cs50.h>
 #include <ctype.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 void print_usage(string command);
@@ -18,7 +19,7 @@ int main(int argc, string argv[])
         print_usage(argv[0]);
         return 1;
     }
-    int k = (int) argv[1];
+    int k = atoi(argv[1]);
 }
 
 void print_usage(string command)
