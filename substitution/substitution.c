@@ -40,6 +40,7 @@ void print_usage(string arg)
     printf("Usage: %s KEY       # key needs to be 26 alphabetic characters, upper and lower case allowed\n", arg);
 }
 
+// return false is any character in string s is not alphabetic
 bool all_alpha(string s)
 {
     for (int i = 0, len = strlen(s); i < len; i++)
