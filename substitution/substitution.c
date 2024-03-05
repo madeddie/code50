@@ -85,7 +85,7 @@ bool all_letters_once(string s)
     {
         sumval += toupper(s[i]);
     }
-    if (sumval < 2015)
+    if (sumval != 2015)
         return false;
     else
         return true;
