@@ -43,7 +43,7 @@ int main(int argc, string argv[])
 
 void print_usage(string arg)
 {
-    printf("Usage: %s KEY       # key needs to be 26 alphabetic characters, upper and lower case allowed\n", arg);
+    printf("Usage: %s KEY       # key needs to be 26 alphabetic characters, upper and lower case allowed, all letters once and only once\n", arg);
 }
 
 // return false is any character in string s is not alphabetic
