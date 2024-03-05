@@ -12,9 +12,10 @@ int main(int argc, string argv[])
         print_usage(argv[0]);
         return 1;
     }
-    else if (!isdigit(argv[1]))
+    else if (isdigit(argv[1]))
     {
         print_usage(argv[0]);
+        printf("yes\n");
         return 1;
     }
 }
