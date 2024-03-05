@@ -13,7 +13,7 @@ int main(int argc, string argv[])
         print_usage(argv[0]);
         return 1;
     }
-    if (!all_digits(argv[1]))
+    else if (!all_digits(argv[1]))
     {
         print_usage(argv[0]);
         return 1;
@@ -34,4 +34,5 @@ bool all_digits(string value)
             return 1;
         }
     }
+    return 0;
 }
