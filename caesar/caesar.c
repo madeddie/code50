@@ -14,7 +14,7 @@ int main(int argc, string argv[])
     }
 }
 
-void print_usage(string argv[])
+void print_usage(string command)
 {
-    printf("Usage: %s key\n")
+    printf("Usage: %s key\n", command);
 }
