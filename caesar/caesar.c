@@ -3,14 +3,14 @@
 #include <stdio.h>
 #include <string.h>
 
-string rotate(int key, string text);
+char rotate(int key, string text);
 int main(void)
 {
     string text = get_string("Text ");
     printf("%s\n", rotate(13, text));
 }
 
-string rotate(int key, string text)
+char rotate(int key, string text)
 {
     char new_string[strlen(text)];
     for (int i = 0, len = strlen(text); i < len; i++)
