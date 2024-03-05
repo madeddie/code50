@@ -49,6 +49,9 @@ bool not_digits(string value)
     return 0;
 }
 
+// Take a char, delete value of A or a to 0 index, add key
+// calculate remainder to loop back over 26 to 0 and add
+// A or a respectively back
 char rotate(int k, char c)
 {
     if (!isalpha(c))
