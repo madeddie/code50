@@ -16,7 +16,7 @@ string rotate(int key, string text)
     string new_string = "";
     for (int i = 0, len = strlen(text); i < len; i++)
     {
-        char new_char;
+        char new_char[strlen(text)];
         if (isalpha(text[i]))
         {
             new_char = text[i] - key;
