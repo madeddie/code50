@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 int main(void)
 {
@@ -9,6 +10,13 @@ string rotate(int key, string text)
 {
     for (i = 0, len = strlen(text); i < len; i++)
     {
-        
+        if (isalpha(text[i]))
+        {
+            char new_char = text[i] - key;
+            if (new_char < 65)
+            {
+                new_char = 'Z' - (64 - new_char)
+            }
+        }
     }
 }
