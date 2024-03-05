@@ -16,12 +16,12 @@ string rotate(int key, string text)
             char new_char = text[i] - key;
             if (new_char < 65)
             {
-                new_char = 'Z' - (64 - new_char)
+                new_char = 'Z' - (64 - new_char);
             }
         }
         else
         {
-            char new_char = text[i]
+            char new_char = text[i];
         }
     }
 }
