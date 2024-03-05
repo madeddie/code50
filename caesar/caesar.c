@@ -31,8 +31,8 @@ bool all_digits(string value)
     {
         if (!isdigit(value[i]))
         {
-            return 1;
+            return 0;
         }
     }
-    return 0;
+    return 1;
 }
