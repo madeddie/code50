@@ -43,7 +43,9 @@ int main(int argc, string argv[])
 
 void print_usage(string arg)
 {
-    printf("Usage: %s KEY       # key needs to be 26 alphabetic characters, upper and lower case allowed, all letters once and only once\n", arg);
+    printf("Usage: %s KEY       # KEY is 26 alphabetic chars, upper and lower case, "
+           "all letters once and only once\n",
+           arg);
 }
 
 // return false is any character in string s is not alphabetic
