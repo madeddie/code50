@@ -6,6 +6,7 @@
 
 void print_usage(string command);
 bool not_digits(string value);
+char rotate(int k, char c);
 
 int main(int argc, string argv[])
 {
@@ -19,8 +20,16 @@ int main(int argc, string argv[])
         print_usage(argv[0]);
         return 1;
     }
-    int k = atoi(argv[1]);
+    int key = atoi(argv[1]);
     string plaintext = get_string("plaintext:  ");
+
+    // Print the ciphertext: label and rotate and print alls chars 1by1
+    printf("ciphertext: ");
+    for (int i = 0, len = strlen(plaintext); i < len; i++)
+    {
+        printf("%c", rotate(key, plaintext[i]));
+    }
+    printf("\n");
 }
 
 void print_usage(string command)
@@ -38,4 +47,12 @@ bool not_digits(string value)
         }
     }
     return 0;
+}
+
+char rotate(int k, char c)
+{
+    if (!isalpha(c))
+        return c;
+    char new_c = c - k;
+    return new_c;
 }
