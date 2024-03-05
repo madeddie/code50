@@ -62,10 +62,10 @@ char substitute(char c, string k)
     }
     else if (isupper(c))
     {
-        return k[c - 'A'];
+        return toupper(k[c - 'A']);
     }
     else
     {
-        return k[c - 'a'];
+        return tolower(k[c - 'a']);
     }
 }
