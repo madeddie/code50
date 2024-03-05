@@ -76,17 +76,20 @@ char substitute(char c, string k)
     }
 }
 
-// uppercase all letters, add them together, if they add up to the wrong value, letters
-// are double and/or missing. A-Z ascii values add up to 2015
+// Loop through all chars if key then loop through again and see if
+// any char _not_ at the same index of the current char is equal to the
+// current char. If doubles are found return false
 bool all_letters_once(string s)
 {
-    int sumval = 0;
     for (int i = 0, len = strlen(s); i < len; i++)
     {
-        sumval += toupper(s[i]);
+        for (int j = 0; j < len; j++)
+        {
+            if (j != i && toupper(s[i]) == toupper(s[j]))
+            {
+                return false;
+            }
+        }
     }
-    if (sumval != 2015)
-        return false;
-    else
-        return true;
+    return true;
 }
