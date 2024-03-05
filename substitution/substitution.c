@@ -24,6 +24,11 @@ int main(int argc, string argv[])
         print_usage(argv[0]);
         return 1;
     }
+    else if (!all_letters_once(argv[1]))
+    {
+        print_usage(argv[0]);
+        return 1;
+    }
 
     string key = argv[1];
     string plaintext = get_string("plaintext:  ");
@@ -67,5 +72,16 @@ char substitute(char c, string k)
     else
     {
         return tolower(k[c - 'a']);
+    }
+}
+
+// uppercase all letters, add them together, if they add up to the wrong value, letters
+// are double and/or missing
+bool all_letters_once(string s)
+{
+    int sumval = 0;
+    for (int i = 0, len = strlen(s); i < len; i++)
+    {
+
     }
 }
