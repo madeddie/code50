@@ -6,6 +6,7 @@
 void print_usage(string arg);
 bool all_alpha(string s);
 char substitute(char c, string k);
+bool all_letters_once(string s);
 
 int main(int argc, string argv[])
 {
@@ -76,12 +77,16 @@ char substitute(char c, string k)
 }
 
 // uppercase all letters, add them together, if they add up to the wrong value, letters
-// are double and/or missing
+// are double and/or missing. A-Z ascii values add up to 2015
 bool all_letters_once(string s)
 {
     int sumval = 0;
     for (int i = 0, len = strlen(s); i < len; i++)
     {
-
+        sumval += toupper(s[i]);
     }
+    if (sumval < 2015)
+        return false;
+    else
+        return true;
 }
