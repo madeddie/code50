@@ -4,7 +4,6 @@
 #include <string.h>
 
 string rotate(int key, string text);
-
 int main(void)
 {
     string text = get_string("Text ");
@@ -13,10 +12,10 @@ int main(void)
 
 string rotate(int key, string text)
 {
-    string new_string = "";
+    char new_string[strlen(text)];
     for (int i = 0, len = strlen(text); i < len; i++)
     {
-        char new_char[strlen(text)];
+        char new_char;
         if (isalpha(text[i]))
         {
             new_char = text[i] - key;
@@ -29,7 +28,7 @@ string rotate(int key, string text)
         {
             new_char = text[i];
         }
-        new_string += new_char;
+        new_string[i] = new_char;
     }
     return new_string;
 }
