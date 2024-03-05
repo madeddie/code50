@@ -23,5 +23,6 @@ string rotate(int key, string text)
         {
             char new_char = text[i];
         }
+        new_string += new_char;
     }
 }
