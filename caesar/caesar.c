@@ -18,6 +18,7 @@ int main(int argc, string argv[])
         print_usage(argv[0]);
         return 1;
     }
+    int k = (int) argv[1];
 }
 
 void print_usage(string command)
