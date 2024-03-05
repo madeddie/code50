@@ -8,6 +8,7 @@ int main(void)
 
 string rotate(int key, string text)
 {
+    string new_string = "";
     for (i = 0, len = strlen(text); i < len; i++)
     {
         if (isalpha(text[i]))
@@ -17,6 +18,10 @@ string rotate(int key, string text)
             {
                 new_char = 'Z' - (64 - new_char)
             }
+        }
+        else
+        {
+            char new_char = text[i]
         }
     }
 }
