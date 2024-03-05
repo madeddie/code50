@@ -53,11 +53,12 @@ char rotate(int k, char c)
 {
     if (!isalpha(c))
         return c;
-    if (isupper(c))
+    else if (isupper(c))
     {
-        c -= 'A';
-        
+        return (((c - 'A') + k) % 26) + 'A';
     }
-    char new_c = c - k;
-    return new_c;
+    else
+    {
+        return (((c - 'a') + k) % 26) + 'a';
+    }
 }
