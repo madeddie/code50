@@ -178,13 +178,13 @@ def main():
             print(visualize_dice(dice_faces))
         else:
             dice_to_roll=None
-            while not valid_dice_choices(dice_to_roll):
-                dice_to_roll = input("Input which dice to re-roll seperated by spaces: ").strip().split()
-            if not dice_to_roll:
+            while not valid_dice_choices(dice_choices):
+                dice_choices = input("Input which dice to re-roll seperated by spaces: ").strip().split()
+            if not dice_choices:
                 print("Nothing to re-roll")
                 turn += 1
                 break
-            dice_to_roll = sorted([int(x) for x in dice_to_roll], reverse=True)
+            dice_to_roll = sorted([int(x) for x in dice_choices], reverse=True)
             num_to_roll = len(dice_to_roll)
             for dice in dice_to_roll:
                 dice_faces.pop(dice -1)
