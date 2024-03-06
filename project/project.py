@@ -154,9 +154,21 @@ def roll_dice(num_of_dice):
 
     return hand
 
-def check_dice_choices(dict_to_roll):
-    for x in dict_to_roll:
-        if 
+def valid_dice_choices(dice_to_roll=None):
+    if not dice_to_roll:
+        return False
+    for x in dice_to_roll:
+        try:
+            int(x)
+        except ValueError:
+            return False
+        if int(x) < 1 or int(x) > 5:
+            return False
+        if len(x) > 5:
+            return False
+
+    return True
+
 def main():
     dice_faces = []
     turn = 1
@@ -165,7 +177,9 @@ def main():
             dice_faces = roll_dice(5)
             print(visualize_dice(dice_faces))
         else:
-            dice_to_roll = input("Input which dice to re-roll seperated by spaces: ").strip().split()
+            dice_to_roll=None
+            while not valid_dice_choices(dice_to_roll):
+                dice_to_roll = input("Input which dice to re-roll seperated by spaces: ").strip().split()
             if not dice_to_roll:
                 print("Nothing to re-roll")
                 turn += 1
