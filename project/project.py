@@ -170,6 +170,10 @@ def valid_dice_choices(dice_to_roll=None):
     return True
 
 def main():
+    try:
+        pinput = input("How many players? ").strip()
+        num_of_players = int(pinput)
+        if num_of_players < 1 or num_of_
     dice_faces = []
     turn = 1
     while turn < 4:
@@ -188,7 +192,6 @@ def main():
             num_to_roll = len(dice_to_roll)
             for dice in dice_to_roll:
                 dice_faces.pop(dice -1)
-            #dice_faces = dice_faces[0:5-num_to_roll]
             dice_faces.extend(roll_dice(num_to_roll))
             print(visualize_dice(dice_faces))
 
