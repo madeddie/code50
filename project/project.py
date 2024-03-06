@@ -161,8 +161,8 @@ def roll_dice(num_of_dice):
 
     return hand
 
-def valid_dice_choices(dice_to_roll=None):
-    if not dice_to_roll:
+def valid_dice_choices(dice_to_roll=False):
+    if dice_to_roll == False:
         return False
     for x in dice_to_roll:
         try:
@@ -206,7 +206,7 @@ def main():
                     dice_faces = roll_dice(5)
                     print(player.name, visualize_dice(dice_faces))
                 else:
-                    dice_choices=None
+                    dice_choices=False
                     while not valid_dice_choices(dice_choices):
                         dice_choices = input("Input which dice to re-roll seperated by spaces: ").strip().split()
                     if not dice_choices:
