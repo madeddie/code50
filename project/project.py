@@ -259,11 +259,18 @@ def main():
 
         round += 1
 
+    print(f"\n{'=' * 20}")
+
     # Calculate bonusses
+    bonus = False
     for player in players:
         if player.upper_score > 63:
-            player.score
-    print(f"\n{'=' * 20}")
+            bonus = True
+            player.score += 35
+            print(f"Player {player.name} received an upper section bonus.")
+    if not bonus:
+        print("No upper section bonusses awarded.")
+
     print("Final scores:")
     for player in players:
         print(f"Name: {player.name}, score: {player.score}")

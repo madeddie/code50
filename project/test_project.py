@@ -15,7 +15,7 @@ def test_visualize_dice():
         project.visualize_dice(hand, style="unknown")
 
     assert project.visualize_dice(hand, style="unicode") == "⚀ ⚁ ⚂"
-    assert project.visualize_dice(hand) == "---------------------\n|     ||o    ||o    |\n|  o  ||     ||  o  |\n|     ||    o||    o|\n---------------------\n   1      2      3   \n"
+    assert project.visualize_dice(hand) == "\n---------------------\n|     ||o    ||o    |\n|  o  ||     ||  o  |\n|     ||    o||    o|\n---------------------\n   1      2      3   \n"
 
 def test_upper_section_score():
     hand = [1, 2, 2, 3, 3, 3, 4, 5, 5, 5, 5]
@@ -61,8 +61,9 @@ def test_chance():
     assert project.chance([1, 2, 3, 4, 5]) == 15
 
 def test_valid_dice_choices():
-    assert project.valid_dice_choices() == True
+    assert project.valid_dice_choices() == False
     assert project.valid_dice_choices("") == True
     assert project.valid_dice_choices("cat") == False
     assert project.valid_dice_choices("0 1 2") == False
     assert project.valid_dice_choices("1 2 3 4 5 6") == False
+    assert project.valid_dice_choices("2 3 4") == True
