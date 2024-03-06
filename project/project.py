@@ -235,9 +235,10 @@ def main():
                 print("Chose section upper, since lower is used up")
 
             while True:
-                print(f"Available categories in section {section}:\n{', '.join(CATEGORIES[section].keys())}")
+                available_categories = CATEGORIES[section].keys() - player.categories[section]
+                print(f"Available categories in section {section}:\n{', '.join(available_categories)}")
                 category = input("Choose scoring category: ").strip().lower()
-                if category in CATEGORIES[section].keys():
+                if category in available_categories:
                     player.categories[section].append(category)
                     break
 
