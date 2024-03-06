@@ -169,10 +169,10 @@ def valid_dice_choices(dice_to_roll=None):
 
     return True
 
-def get_players():
+def get_players(arg=None):
     while True:
         try:
-            pinput = input("How many players? ").strip()
+            pinput = arg or input("How many players? ").strip()
             num_of_players = int(pinput)
             if num_of_players < 1 or num_of_players > 10:
                 raise ValueError
