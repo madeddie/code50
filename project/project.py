@@ -212,25 +212,25 @@ def main():
                 player.dice_faces.extend(roll_dice(num_to_roll))
                 print(visualize_dice(player.dice_faces))
 
+                while True:
+                    section = input("Choose upper or lower section: ").strip().lower()
+                    if section in ["upper", "lower"]:
+                        break
+
+                while True:
+                    print(f"Available categories in section {section}:\n{', '.join(CATEGORIES[section].keys())}")
+                    category = input("Choose scoring category: ").strip().lower()
+                    if category in CATEGORIES[section].keys():
+                        break
+
+                print(f"Final hand: {dice_faces}")
+
+                if section == "upper":
+                    print(f"Score {section}/{category}: {upper_section_score(dice_faces, category)}")
+                else:
+                    print(f"Score {section}/{category}: {CATEGORIES['lower'][category](dice_faces)}")
+
             turn += 1
-
-        while True:
-            section = input("Choose upper or lower section: ").strip().lower()
-            if section in ["upper", "lower"]:
-                break
-
-        while True:
-            print(f"Available categories in section {section}:\n{', '.join(CATEGORIES[section].keys())}")
-            category = input("Choose scoring category: ").strip().lower()
-            if category in CATEGORIES[section].keys():
-                break
-
-        print(f"Final hand: {dice_faces}")
-
-        if section == "upper":
-            print(f"Score {section}/{category}: {upper_section_score(dice_faces, category)}")
-        else:
-            print(f"Score {section}/{category}: {CATEGORIES['lower'][category](dice_faces)}")
 
 if __name__ == "__main__":
     main()
