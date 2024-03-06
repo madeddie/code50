@@ -189,7 +189,7 @@ def get_players(arg=None):
             players = list()
             for x in range(0, num_of_players):
                 # TODO: add question for player name
-                players.append(Player(name=f"player{x}"))
+                players.append(Player(name=f"player{x+1}"))
 
             return players
 
