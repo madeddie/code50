@@ -215,10 +215,17 @@ def main():
 
             turn += 1
 
-        while True:
-            section = input("Choose upper or lower section: ").strip().lower()
-            if section in ["upper", "lower"]:
-                break
+        if len(player.section_upper) < 6 and len(player.section_lower) < 7:
+            while True:
+                section = input("Choose upper or lower section: ").strip().lower()
+                if section in ["upper", "lower"]:
+                    break
+        elif len(player.section_upper) == 6:
+            section = "lower"
+            print("Chose section lower, since upper is used up")
+        else:
+            section = "upper"
+            print("Chose section upper, since lower is used up")
 
         while True:
             print(f"Available categories in section {section}:\n{', '.join(CATEGORIES[section].keys())}")
