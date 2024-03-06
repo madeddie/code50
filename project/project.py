@@ -27,6 +27,7 @@ class Player:
     def __init__(self, name):
         self.name = name
         self.score = 0
+        self.upper_score = 0
         self.categories = {
             "upper": [],
             "lower": [],
@@ -249,6 +250,7 @@ def main():
             if section == "upper":
                 print(f"Score {section}/{category}: {upper_section_score(dice_faces, category)}")
                 player.score += upper_section_score(dice_faces, category)
+                player.upper_score += upper_section_score(dice_faces, category)
             else:
                 print(f"Score {section}/{category}: {CATEGORIES['lower'][category](dice_faces)}")
                 player.score += CATEGORIES['lower'][category](dice_faces)
@@ -257,6 +259,10 @@ def main():
 
         round += 1
 
+    # Calculate bonusses
+    for player in players:
+        if player.upper_score > 63:
+            player.score
     print(f"\n{'=' * 20}")
     print("Final scores:")
     for player in players:
