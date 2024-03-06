@@ -109,6 +109,8 @@ CATEGORIES = {
         # "four": lambda hand: xofakind(hand, kind=4),
         # "fours": lambda hand: xofakind(hand, kind=4),
         "fourofakind": lambda hand: xofakind(hand, kind=4),
+        "smallstraight": lambda hand: straight(hand, kind="small"),
+        "largestraight": lambda hand: straight(hand, kind="large"),
         "yahtzee": lambda hand: xofakind(hand, kind=5),
         # "full": fullhouse,
         "fullhouse": fullhouse,
