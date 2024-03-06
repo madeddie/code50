@@ -170,10 +170,17 @@ def valid_dice_choices(dice_to_roll=None):
     return True
 
 def main():
-    try:
-        pinput = input("How many players? ").strip()
-        num_of_players = int(pinput)
-        if num_of_players < 1 or num_of_
+    while True:
+        try:
+            pinput = input("How many players? ").strip()
+            num_of_players = int(pinput)
+            if num_of_players < 1 or num_of_players > 10:
+                raise ValueError
+        except ValueError:
+            continue
+        else:
+            break
+    print(num_of_players)
     dice_faces = []
     turn = 1
     while turn < 4:
