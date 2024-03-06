@@ -23,6 +23,9 @@ DICE = {
     ]
 }
 
+class Player:
+   ...
+   
 def xofakind(hand, kind):
     """Finds an X amount of equal values in the hand
     Used for Three of a kind, Four of a kind and Yahtzee (5 of a kind)
