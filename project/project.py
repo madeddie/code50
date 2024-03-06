@@ -260,5 +260,7 @@ def main():
     print("Final scores:")
     for player in players:
         print(f"Name: {player.name}, score: {player.score}")
+    print(f"The winner is: {max(players, key=lambda p: p.score).name}")
+    
 if __name__ == "__main__":
     main()
