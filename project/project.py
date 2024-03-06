@@ -257,13 +257,15 @@ def main():
 
         round += 1
 
+    print(f"\n{'=' * 20}")
     print("Final scores:")
     for player in players:
         print(f"Name: {player.name}, score: {player.score}")
     max_score = max(players, key=lambda p: p.score).score
     winners = [p.name for p in players if p.score == max_score]
+    print(f"\n{'=' * 20}")
     if len(winners) > 1:
-        print(f"It's a tie between {', ',join(winners)}")
+        print(f"It's a tie between {', '.join(winners)}")
     else:
         print(f"The winner is: {winners[0]}")
 
