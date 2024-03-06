@@ -238,7 +238,7 @@ def main():
                 print(f"Available categories in section {section}:\n{', '.join(CATEGORIES[section].keys())}")
                 category = input("Choose scoring category: ").strip().lower()
                 if category in CATEGORIES[section].keys():
-                    player.categories["section"].append(category)
+                    player.categories[section].append(category)
                     break
 
             print(f"Final hand: {dice_faces}")
