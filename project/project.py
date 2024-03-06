@@ -26,6 +26,11 @@ DICE = {
 class Player:
     def __init__(self, name):
         self.name = name
+        self.score = 0
+        self.categories = {
+            "upper": [],
+            "lower": [],
+        }
 
 def xofakind(hand, kind):
     """Finds an X amount of equal values in the hand
@@ -87,6 +92,7 @@ def straight(hand, kind="small"):
 def chance(hand):
     return(sum(hand))
 
+# This constant defines the section, categories and their scores
 CATEGORIES = {
     "upper": {
         "aces": 1,
@@ -191,54 +197,61 @@ def main():
     players = get_players()
     max_rounds = 13
     round = 0
-    for player in players:
-        max_turns = 3
-        turn = 0
-        while turn < max_turns:
-            if turn == 0:
-                dice_faces = roll_dice(5)
-                print(player.name, visualize_dice(dice_faces))
+    while round < max_rounds:
+        for player in players:
+            max_turns = 3
+            turn = 0
+            while turn < max_turns:
+                if turn == 0:
+                    dice_faces = roll_dice(5)
+                    print(player.name, visualize_dice(dice_faces))
+                else:
+                    dice_choices=None
+                    while not valid_dice_choices(dice_choices):
+                        dice_choices = input("Input which dice to re-roll seperated by spaces: ").strip().split()
+                    if not dice_choices:
+                        print("Nothing to re-roll")
+                        turn += 1
+                        break
+                    dice_to_roll = sorted([int(x) for x in dice_choices], reverse=True)
+                    num_to_roll = len(dice_to_roll)
+                    for dice in dice_to_roll:
+                        dice_faces.pop(dice -1)
+                    dice_faces.extend(roll_dice(num_to_roll))
+                    print(visualize_dice(dice_faces))
+
+                turn += 1
+
+            if len(player.categories["upper"]) < 6 and len(player.categories["lower"]) < 7:
+                while True:
+                    section = input("Choose upper or lower section: ").strip().lower()
+                    if section in ["upper", "lower"]:
+                        break
+            elif len(player.categories["upper"]) == 6:
+                section = "lower"
+                print("Chose section lower, since upper is used up")
             else:
-                dice_choices=None
-                while not valid_dice_choices(dice_choices):
-                    dice_choices = input("Input which dice to re-roll seperated by spaces: ").strip().split()
-                if not dice_choices:
-                    print("Nothing to re-roll")
-                    turn += 1
-                    break
-                dice_to_roll = sorted([int(x) for x in dice_choices], reverse=True)
-                num_to_roll = len(dice_to_roll)
-                for dice in dice_to_roll:
-                    dice_faces.pop(dice -1)
-                dice_faces.extend(roll_dice(num_to_roll))
-                print(visualize_dice(dice_faces))
+                section = "upper"
+                print("Chose section upper, since lower is used up")
 
-            turn += 1
-
-        if len(player.section_upper) < 6 and len(player.section_lower) < 7:
             while True:
-                section = input("Choose upper or lower section: ").strip().lower()
-                if section in ["upper", "lower"]:
+                print(f"Available categories in section {section}:\n{', '.join(CATEGORIES[section].keys())}")
+                category = input("Choose scoring category: ").strip().lower()
+                if category in CATEGORIES[section].keys():
+                    player.categories["section"].append(category)
                     break
-        elif len(player.section_upper) == 6:
-            section = "lower"
-            print("Chose section lower, since upper is used up")
-        else:
-            section = "upper"
-            print("Chose section upper, since lower is used up")
 
-        while True:
-            print(f"Available categories in section {section}:\n{', '.join(CATEGORIES[section].keys())}")
-            category = input("Choose scoring category: ").strip().lower()
-            if category in CATEGORIES[section].keys():
-                break
+            print(f"Final hand: {dice_faces}")
 
-        print(f"Final hand: {dice_faces}")
+            if section == "upper":
+                print(f"Score {section}/{category}: {upper_section_score(dice_faces, category)}")
+                player.score += upper_section_score(dice_faces, category)
+            else:
+                print(f"Score {section}/{category}: {CATEGORIES['lower'][category](dice_faces)}")
+                player.score += CATEGORIES['lower'][category](dice_faces)
 
-        if section == "upper":
-            print(f"Score {section}/{category}: {upper_section_score(dice_faces, category)}")
-        else:
-            print(f"Score {section}/{category}: {CATEGORIES['lower'][category](dice_faces)}")
+            print(player.name, player.score)
 
+        round += 1
 if __name__ == "__main__":
     main()
