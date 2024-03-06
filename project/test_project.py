@@ -61,8 +61,9 @@ def test_chance():
     assert project.chance([1, 2, 3, 4, 5]) == 15
 
 def test_valid_dice_choices():
-    assert project.valid_dice_choices() == False
-    assert project.valid_dice_choices([""]) == True
+    with pytest.raises(TypeError):
+        project.valid_dice_choices()
+    assert project.valid_dice_choices([]) == True
     assert project.valid_dice_choices(["cat"]) == False
     assert project.valid_dice_choices(["0", "1", "2"]) == False
     assert project.valid_dice_choices(["1", "2", "3", "4", "5", "6"]) == False

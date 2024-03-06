@@ -164,9 +164,9 @@ def roll_dice(num_of_dice):
 
     return hand
 
-def valid_dice_choices(dice_to_roll=False):
-    if dice_to_roll == False:
-        return False
+def valid_dice_choices(dice_to_roll):
+    if not dice_to_roll:
+        return True
     # TODO: test for doubles
     for x in dice_to_roll:
         try:
