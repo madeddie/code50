@@ -155,7 +155,8 @@ def roll_dice(num_of_dice):
     return hand
 
 def check_dice_choices(dict_to_roll):
-    for 
+    for x in dict_to_roll:
+        if 
 def main():
     dice_faces = []
     turn = 1
