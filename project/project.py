@@ -223,7 +223,7 @@ def main():
                     if category in CATEGORIES[section].keys():
                         break
 
-                print(f"Final hand: {dice_faces}")
+                print(f"Final hand: {player.dice_faces}")
 
                 if section == "upper":
                     print(f"Score {section}/{category}: {upper_section_score(dice_faces, category)}")
