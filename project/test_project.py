@@ -65,3 +65,5 @@ def test_valid_dice_choices():
     assert project.valid_dice_choices("cat") == False
     assert project.valid_dice_choices("0 1 2") == False
     assert project.valid_dice_choices("1 2 3 4 5 6") == False
+
+def test_get_players()
