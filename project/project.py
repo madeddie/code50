@@ -169,7 +169,7 @@ def valid_dice_choices(dice_to_roll=None):
 
     return True
 
-def main():
+def get_players():
     while True:
         try:
             pinput = input("How many players? ").strip()
@@ -179,8 +179,15 @@ def main():
         except ValueError:
             continue
         else:
-            break
-    print(num_of_players)
+            players = list()
+            for x in range(0, num_of_players):
+                players.append(Player())
+
+            return players
+
+def main():
+    players = get_players()
+    print(players)
     dice_faces = []
     turn = 1
     while turn < 4:
