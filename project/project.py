@@ -137,7 +137,7 @@ def visualize_dice(die_faces, style="ascii"):
     if style == "unicode":
         return " ".join([DICE['UNICODE'][die_face -1] for die_face in die_faces])
     else:
-        output = ""
+        output = "\n"
         die_face_lines = []
         for die_face in die_faces:
             die_face_lines.append(DICE["ASCII"][die_face -1].split("\n"))
