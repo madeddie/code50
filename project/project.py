@@ -177,7 +177,7 @@ def main():
             dice_faces = roll_dice(5)
             print(visualize_dice(dice_faces))
         else:
-            dice_to_roll=None
+            dice_choices=None
             while not valid_dice_choices(dice_choices):
                 dice_choices = input("Input which dice to re-roll seperated by spaces: ").strip().split()
             if not dice_choices:
@@ -188,7 +188,7 @@ def main():
             num_to_roll = len(dice_to_roll)
             for dice in dice_to_roll:
                 dice_faces.pop(dice -1)
-            dice_faces = dice_faces[0:5-num_to_roll]
+            #dice_faces = dice_faces[0:5-num_to_roll]
             dice_faces.extend(roll_dice(num_to_roll))
             print(visualize_dice(dice_faces))
 
