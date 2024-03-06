@@ -256,5 +256,9 @@ def main():
             print(player.name, player.score)
 
         round += 1
+
+    print("Final scores:")
+    for player in players:
+        print(f"Name: {player.name}, score: {player.score}")
 if __name__ == "__main__":
     main()
