@@ -25,7 +25,7 @@ DICE = {
 
 class Player:
    ...
-   
+
 def xofakind(hand, kind):
     """Finds an X amount of equal values in the hand
     Used for Three of a kind, Four of a kind and Yahtzee (5 of a kind)
@@ -154,6 +154,8 @@ def roll_dice(num_of_dice):
 
     return hand
 
+def check_dice_choices(dict_to_roll):
+    for 
 def main():
     dice_faces = []
     turn = 1
