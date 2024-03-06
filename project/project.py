@@ -189,13 +189,15 @@ def get_players(arg=None):
 
 def main():
     players = get_players()
-
-    turn = 1
+    max_rounds = 13
+    round = 0
     for player in players:
-    while turn < 4:
-        if turn == 1:
-                player.dice_faces = roll_dice(5)
-                print(visualize_dice(player.dice_faces))
+        max_turns = 3
+        turn = 0
+        while turn < max_turns:
+            if turn == 0:
+                dice_faces = roll_dice(5)
+                print(player.name, visualize_dice(dice_faces))
                     else:
                         dice_choices=None
                         while not valid_dice_choices(dice_choices):
@@ -213,23 +215,23 @@ def main():
 
                     turn += 1
 
-                while True:
-                    section = input("Choose upper or lower section: ").strip().lower()
-                    if section in ["upper", "lower"]:
-                        break
+                    while True:
+                        section = input("Choose upper or lower section: ").strip().lower()
+                        if section in ["upper", "lower"]:
+                            break
 
-                while True:
-                    print(f"Available categories in section {section}:\n{', '.join(CATEGORIES[section].keys())}")
-                    category = input("Choose scoring category: ").strip().lower()
-                    if category in CATEGORIES[section].keys():
-                        break
+                    while True:
+                        print(f"Available categories in section {section}:\n{', '.join(CATEGORIES[section].keys())}")
+                        category = input("Choose scoring category: ").strip().lower()
+                        if category in CATEGORIES[section].keys():
+                            break
 
-                print(f"Final hand: {dice_faces}")
+                    print(f"Final hand: {dice_faces}")
 
-                if section == "upper":
-                    print(f"Score {section}/{category}: {upper_section_score(dice_faces, category)}")
-                else:
-                    print(f"Score {section}/{category}: {CATEGORIES['lower'][category](dice_faces)}")
+                    if section == "upper":
+                        print(f"Score {section}/{category}: {upper_section_score(dice_faces, category)}")
+                    else:
+                        print(f"Score {section}/{category}: {CATEGORIES['lower'][category](dice_faces)}")
 
 if __name__ == "__main__":
     main()
