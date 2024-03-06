@@ -167,6 +167,7 @@ def roll_dice(num_of_dice):
 def valid_dice_choices(dice_to_roll=False):
     if dice_to_roll == False:
         return False
+    # TODO: test for doubles
     for x in dice_to_roll:
         try:
             int(x)
