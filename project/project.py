@@ -197,7 +197,7 @@ def get_players(arg=None):
 
 def main():
     players = get_players()
-    max_rounds = 13
+    max_rounds = 2
     round = 0
     while round < max_rounds:
         for player in players:
@@ -260,7 +260,12 @@ def main():
     print("Final scores:")
     for player in players:
         print(f"Name: {player.name}, score: {player.score}")
-    print(f"The winner is: {max(players, key=lambda p: p.score).name}")
-    
+    max_score = max(players, key=lambda p: p.score).score
+    winners = [p.name for p in players if p.score == max_score]
+    if len(winners) > 1:
+        print(f"It's a tie between {', ',join(winners)}")
+    else:
+        print(f"The winner is: {winners[0]}")
+
 if __name__ == "__main__":
     main()
