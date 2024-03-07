@@ -150,14 +150,17 @@ void sort_pairs(void)
     // {
     //     winners[pairs[i].winner] += 1;
     // }
-    for (int i = 0; i < pair_count - 1; i++)
+    swap = true;
+    while (swap == true)
     {
-        swap = false;
-        if (calculate_strength(pairs[i]) < calculate_strength(pairs[i + 1]))
+        for (int i = 0; i < pair_count - 1; i++)
         {
-            pair tmp = pairs[i];
-            pairs[i] = pairs[i + 1];
-            pairs[i + 1] = pairs[i];
+            if (calculate_strength(pairs[i]) < calculate_strength(pairs[i + 1]))
+            {
+                pair tmp = pairs[i];
+                pairs[i] = pairs[i + 1];
+                pairs[i + 1] = pairs[i];
+            }
         }
     }
 }
