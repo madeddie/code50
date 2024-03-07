@@ -20,3 +20,5 @@ sort3 random 5k:0m0.047s 10k:0m0.193s 50k:0m2.402s
 sort1 sorted 5k:0m0.033s 10k:0m0.079s 50k:0m0.471s
 sort2 sorted 5k:0m0.057s 10k:0m0.086s 50k:0m0.425s
 sort3 sorted 5k:0m0.060s 10k:0m0.160s 50k:0m2.355s
+
+sort1 rev 
