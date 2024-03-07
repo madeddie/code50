@@ -136,10 +136,6 @@ void add_pairs(void)
             }
         }
     }
-    for (int p = 0; p < pair_count; p++)
-    {
-        printf("%i, %i\n", pairs[p].winner, pairs[p].loser);
-    }
 }
 
 // Sort pairs in decreasing order by strength of victory
