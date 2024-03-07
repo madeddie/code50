@@ -148,7 +148,7 @@ void sort_pairs(void)
     }
     for (int i = 0; i < candidate_count - 1; i++)
     {
-        printf("Candidate %i, wins %i\n", i, winners[i]);
+        printf("Candidate %s, wins %i\n", candidates[i], winners[i]);
     }
 }
 
