@@ -153,7 +153,7 @@ void sort_pairs(void)
     printf("before sorting\n");
     for (int i = 0; i < pair_count; i++)
     {
-        printf("%s, %s\n". candidates[pairs[i].winner], candidates[pairs[i].loser]);
+        printf("%i, %i\n". pairs[i].winner, pairs[i].loser);
     }
     for (int i = 0; i < pair_count - 1; i++)
     {
@@ -167,7 +167,7 @@ void sort_pairs(void)
     printf("after sorting\n");
     for (int i = 0; i < pair_count; i++)
     {
-        printf("%s, %s\n". candidates[pairs[i].winner], candidates[pairs[i].loser]);
+        printf("%i, %i\n". pairs[i].winner, pairs[i].loser);
     }
 }
 
