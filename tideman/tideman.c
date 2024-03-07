@@ -151,6 +151,7 @@ void sort_pairs(void)
     //     winners[pairs[i].winner] += 1;
     // }
 
+    bool swap;
     do
     {
         for (int i = 0; i < pair_count - 1; i++)
@@ -160,10 +161,11 @@ void sort_pairs(void)
                 pair tmp = pairs[i];
                 pairs[i] = pairs[i + 1];
                 pairs[i + 1] = pairs[i];
+                swap = true;
             }
         }
     }
-    while (swap == true)
+    while (swap == true);
 }
 
 int calculate_strength(pair p)
