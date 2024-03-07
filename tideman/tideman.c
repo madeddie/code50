@@ -126,8 +126,8 @@ void add_pairs(void)
     {
         for (int j = 0; j < candidate_count; j++)
         {
-            //if (preferences[i][j] <= 0)
-            //    continue;
+            // if (preferences[i][j] <= 0)
+            //     continue;
             for (int k = 0; k < preferences[i][j]; k++)
             {
                 pairs[pair_count].winner = i;
@@ -149,7 +149,6 @@ void sort_pairs(void)
     {
         winners[pairs[i].winner] += 1;
     }
-    for (int i = 0; i < candidate_count; i++)
 }
 
 // Lock pairs into the candidate graph in order, without creating cycles
