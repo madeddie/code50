@@ -152,6 +152,7 @@ void sort_pairs(void)
     // }
     for (int i = 0; i < pair_count - 1; i++)
     {
+        swap = false;
         if (calculate_strength(pairs[i]) < calculate_strength(pairs[i + 1]))
         {
             pair tmp = pairs[i];
