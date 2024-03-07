@@ -9,3 +9,10 @@ How do you know?: TODO
 sort3 uses: TODO
 
 How do you know?: TODO
+
+### delete this and after ###
+sort1 random
+
+time ./sort1 random 5k:0m0.064s 10k:0m0.206s 50k:0m5.854s
+time ./sort2 random 5k:0m0.033s 10k:0m0.059s 50k:0m0.502s
+time ./sort3 random 5k:0m0.047s 10k:0m0.193s 50k:0m2.402s
