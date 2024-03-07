@@ -123,7 +123,12 @@ void record_preferences(int ranks[])
 void add_pairs(void)
 {
     for (int i = 0; i < candidate_count - 1; i++)
-    prefences[]
+    {
+        for (int j = 0; j < candidate_count - 1; j++)
+        {
+            if preferences[i]
+        }
+    }
 }
 
 // Sort pairs in decreasing order by strength of victory
