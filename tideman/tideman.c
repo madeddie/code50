@@ -142,6 +142,9 @@ void add_pairs(void)
 void sort_pairs(void)
 {
     int winners[candidate_count];
+    for (int w = 0; w < candidate_count; w++)
+        winners[w] = 0;
+
     for (int i = 0; i < pair_count; i++)
     {
         winners[pairs[i].winner] += 1;
