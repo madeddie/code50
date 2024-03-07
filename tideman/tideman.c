@@ -153,8 +153,9 @@ void sort_pairs(void)
     printf("before sorting\n");
     for (int i = 0; i < pair_count; i++)
     {
-        printf("%i, %i\n". pairs[i].winner, pairs[i].loser);
+        printf("%s, %s\n", candidates[pairs[0].winner], candidates[pairs[0].loser]);
     }
+
     for (int i = 0; i < pair_count - 1; i++)
     {
         if (calculate_strength(pairs[i]) < calculate_strength(pairs[i + 1]))
@@ -167,7 +168,7 @@ void sort_pairs(void)
     printf("after sorting\n");
     for (int i = 0; i < pair_count; i++)
     {
-        printf("%i, %i\n". pairs[i].winner, pairs[i].loser);
+        printf("%s, %s\n", candidates[pairs[0].winner], candidates[pairs[0].loser]);
     }
 }
 
