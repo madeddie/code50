@@ -136,10 +136,6 @@ void add_pairs(void)
             }
         }
     }
-    for (int i = 0; i < pair_count; i++)
-    {
-        printf("winner %s, loser %s\n", candidates[pairs[i].winner], candidates[pairs[i].loser]);
-    }
 }
 
 // Sort pairs in decreasing order by strength of victory
@@ -154,9 +150,6 @@ void sort_pairs(void)
         winners[pairs[i].winner] += 1;
     }
     for (int i = 0; i < candidate_count; i++)
-    {
-        printf("Candidate %s, wins %i\n", candidates[i], winners[i]);
-    }
 }
 
 // Lock pairs into the candidate graph in order, without creating cycles
