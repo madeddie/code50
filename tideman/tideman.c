@@ -30,6 +30,7 @@ bool vote(int rank, string name, int ranks[]);
 void record_preferences(int ranks[]);
 void add_pairs(void);
 void sort_pairs(void);
+int calculate_strength(pair p);
 void lock_pairs(void);
 void print_winner(void);
 
@@ -141,14 +142,40 @@ void add_pairs(void)
 // Sort pairs in decreasing order by strength of victory
 void sort_pairs(void)
 {
-    int winners[candidate_count];
-    for (int w = 0; w < candidate_count; w++)
-        winners[w] = 0;
+    // int winners[candidate_count];
+    // for (int w = 0; w < candidate_count; w++)
+    //     winners[w] = 0;
 
+    // for (int i = 0; i < pair_count; i++)
+    // {
+    //     winners[pairs[i].winner] += 1;
+    // }
+    printf("before sorting\n");
     for (int i = 0; i < pair_count; i++)
     {
-        winners[pairs[i].winner] += 1;
+        printf("%s, %s". candidates[pairs[i].winner], candidates[pairs[i].loser])
     }
+    for (int i = 0; i < pair_count - 1; i++)
+    {
+        if (calculate_strength(pairs[i]) < calculate_strength(pairs[i + 1]))
+        {
+            pair tmp = pairs[i];
+            pairs[i] = pairs[i + 1];
+            pairs[i + 1] = pairs[i];
+        }
+    }
+    printf("after sorting\n");
+    for (int i = 0; i < pair_count; i++)
+    {
+        printf("%s, %s". candidates[pairs[i].winner], candidates[pairs[i].loser])
+    }
+}
+
+int calculate_strength(pair p)
+{
+    int winner = p.winner;
+    int loser = p.loser;
+    return preferences[winner][loser] - preferences[loser][winner];
 }
 
 // Lock pairs into the candidate graph in order, without creating cycles
