@@ -32,6 +32,7 @@ void add_pairs(void);
 void sort_pairs(void);
 int calculate_strength(pair p);
 void lock_pairs(void);
+bool no_cycle(pair p);
 void print_winner(void);
 
 int main(int argc, string argv[])
@@ -180,13 +181,20 @@ void lock_pairs(void)
 {
     for (int i = 0; i < pair_count - 1; i++)
     {
-        
+        if (no_cycle(pairs[i]))
+        {
+            locked[pairs[i].winner][pairs[i].loser] = true;
+        }
     }
+}
+
+bool no_cycle(pair p)
+{
+    return true;
 }
 
 // Print the winner of the election
 void print_winner(void)
 {
-    // TODO
-    return;
+    printf("%s", candidates[locked[0][0]]);
 }
