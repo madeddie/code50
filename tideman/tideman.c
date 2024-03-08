@@ -178,8 +178,10 @@ int calculate_strength(pair p)
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
 {
-    // TODO
-    return;
+    for (int i = 0; i < pair_count - 1; i++)
+    {
+        
+    }
 }
 
 // Print the winner of the election
