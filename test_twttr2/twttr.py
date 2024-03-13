@@ -7,7 +7,7 @@ def shorten(word):
     word = word.strip()
     output = ""
     for c in word:
-        if c in " AEIOUaeiou0123456789!#$%&\'()*+,-./:;?<=>@[\\]^_`{|}~":
+        if c in "AEIOUaeiou":
             c = ""
         output += c
     return output
