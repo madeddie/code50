@@ -10,4 +10,4 @@ while True:
         print()
         break
 final_list = p.join(name_list)
-print("Adieu, adieu to " + final_list)
+print("Adieu, adieu, to " + final_list)
