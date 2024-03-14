@@ -24,13 +24,12 @@ There are 13 categories divided over 2 sections. Every category can only be used
 
 * Lower Section
 
-Three Of A Kind	At least three dice the same	Sum of all dice	23444 scores 17
-Four Of A Kind	At least four dice the same	Sum of all dice	45555 scores 24
-Full House	Three of one number and two of another	25	22555 scores 25
-Small Straight	Four sequential dice
-(1-2-3-4, 2-3-4-5, or 3-4-5-6)	30	13456 scores 30
-Large Straight	Five sequential dice
-(1-2-3-4-5 or 2-3-4-5-6)	40	12345 scores 40
-Yahtzee	All five dice the same	50	33333 scores 50
-Chance
+    - Three Of A Kind	At least three dice the same	Sum of all dice	23444 scores 17
+    - Four Of A Kind	At least four dice the same	Sum of all dice	45555 scores 24
+    - Full House	Three of one number and two of another	25	22555 scores 25
+    - Small Straight	Four sequential dice (1-2-3-4, 2-3-4-5, or 3-4-5-6)	30	13456 scores 30
+    - Large Straight	Five sequential dice (1-2-3-4-5 or 2-3-4-5-6)	40	12345 scores 40
+    - Yahtzee	All five dice the same	50	33333 scores 50
+    - Chance Any combination	Sum of all dice
+
 For more information on the rules, see https://en.wikipedia.org/wiki/Yahtzee#Rules
