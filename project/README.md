@@ -1,3 +1,3 @@
 # Yahtzee simulator
-#### Video Demo: https://www.youtube.com/watch?v=QLWJuWTtJgw
+#### Video Demo: https://youtu.be/bRf7KdcRdFI
 #### Description:
