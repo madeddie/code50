@@ -202,7 +202,7 @@ def get_players(arg=None):
 
 def main():
     players = get_players()
-    max_rounds = 2
+    max_rounds = 13
     round = 0
     while round < max_rounds:
         for player in players:
