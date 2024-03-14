@@ -165,13 +165,16 @@ def roll_dice(num_of_dice):
     return hand
 
 def valid_dice_choices(dice_to_roll):
+    # Initial input is False specifically, not just empty
     if dice_to_roll == False:
         return False
+    # When the list of dice_to_roll is empty that's ok
     if len(dice_to_roll) == 0:
         return True
     if len(dice_to_roll) > 5:
         return False
-    # TODO: test for doubles
+
+    # Check if all the values in the list are valid ints between 1 and 5
     for x in dice_to_roll:
         try:
             int(x)
@@ -179,6 +182,10 @@ def valid_dice_choices(dice_to_roll):
             return False
         if int(x) < 1 or int(x) > 5:
             return False
+
+    # Check if there are no double choices
+    if len(dice_to_roll) != len(set(dice_to_roll)):
+        return False
 
     return True
 
@@ -194,7 +201,6 @@ def get_players(arg=None):
         else:
             players = list()
             for x in range(0, num_of_players):
-                # TODO: add question for player name
                 player_name = input(f"What is your name, player{x+1}? ")
                 players.append(Player(name=player_name))
 
