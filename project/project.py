@@ -167,6 +167,8 @@ def roll_dice(num_of_dice):
 def valid_dice_choices(dice_to_roll):
     if dice_to_roll == "":
         return True
+    if not dice_to_roll:
+        return False
     if len(dice_to_roll) > 5:
         return False
     # TODO: test for doubles
