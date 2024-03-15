@@ -23,12 +23,7 @@ int main(int argc, char *argv[])
     // Create a buffer for a block of data
     uint8_t buffer[BSIZE];
 
-    FILE *output = fopen("output.jpg", "wb");
-    if (output == NULL)
-    {
-        fclose(card);
-        return 1;
-    }
+    FILE *output;
     int image_start = 0;
     // While there's still data left to read from the memory card
     while (fread(buffer, 1, sizeof(buffer), card) == 512)
@@ -36,7 +31,10 @@ int main(int argc, char *argv[])
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff)
         {
             printf("Found image!\n");
-            fclose(output);
+            if (output != NULL)
+            {
+                fclose(output);
+            }
             image_start += 1;
             char image_name[8];
             sprintf(image_name, "%i.jpg\n", image_start);
