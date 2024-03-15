@@ -53,10 +53,13 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 
 int main(void)
 {
-    int map[3] = {1, 2, 3};
-    for (int i = 0; i < 3 / 2; i++)
+    int map[3][3] = {{255, 0, 0}, {255, 0, 0}, {255, 0, 0}};
+    for (int i = 0; i < 3; i++)
     {
-        printf("x: %i,y: %i\n", map[i], map[3 - i]);
+        for (int j = 0; j < 3; j++)
+        {
+            printf("x: %i\n", map[i][j]);
+        }
     }
 }
 
