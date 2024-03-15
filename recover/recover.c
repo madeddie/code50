@@ -35,9 +35,9 @@ int main(int argc, char *argv[])
             {
                 fclose(output);
             }
-            image_start += 1;
             char image_name[9];
             sprintf(image_name, "%03i.jpg", image_start);
+            image_start += 1;
             output = fopen(image_name, "wb");
             if (output == NULL)
             {
