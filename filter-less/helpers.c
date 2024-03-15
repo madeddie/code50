@@ -70,24 +70,26 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             int blue = 0;
             int green = 0;
             int red = 0;
-            printf("x: %i,y: %i ->\n", i, j);
-            for (int k = -1; k < 2; k++)
+
+            for (int r = -1; r < 2; r++)
             {
-                int ival = 0;
-                int jval = 0;
-                if ((i + k) > height -1 || (i + k) < 0)
-                    ival = i;
-                else
-                    ival += k;
-                if ((j + k) > width -1 || (j + k) < 0)
-                    jval = j;
-                else
-                    jval += k;
-                printf("\tkx: %i, ky: %i\n", ival, jval);
-                pixels += 1;
-                blue += copy[ival][jval].rgbtBlue;
-                green += copy[ival][jval].rgbtGreen;
-                red += copy[ival][jval].rgbtRed;
+                for (int c = -1; c < 2; c++)
+                {
+                    if (i + r < 0 || i + r > height - 1)
+                    {
+                        continue;
+                    }
+
+                    if (j + c < 0 || j + c > width - 1)
+                    {
+                        continue;
+                    }
+
+                    blue += image[i + r][j + c].rgbtBlue;
+                    green += image[i + r][j + c].rgbtGreen;
+                    red += image[i + r][j + c].rgbtRed;
+                    pixels += 1;
+                }
             }
             image[i][j].rgbtBlue = round(blue / pixels);
             image[i][j].rgbtGreen = round(green / pixels);
