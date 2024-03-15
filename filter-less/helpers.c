@@ -75,7 +75,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             {
                 int ival = 0;
                 int jval = 0;
-                if (height < (i + k) || (i + k) < 0)
+                if ((i + k) > height || (i + k) < 0)
                     ival = i;
                 else
                     ival += k;
@@ -83,7 +83,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     jval = j;
                 else
                     jval += k;
-                printf("\tkx: %i, ky: %i\n", i + k, j + k);
+                printf("\tkx: %i, ky: %i\n", ival, jval);
                 pixels += 1;
                 blue += copy[ival][jval].rgbtBlue;
                 green += copy[ival][jval].rgbtGreen;
