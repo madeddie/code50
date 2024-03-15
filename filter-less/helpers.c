@@ -73,10 +73,10 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             printf("x: %i,y: %i ->\n", i, j);
             for (int k = -1; k < 2; k++)
             {
-                if (i == 0)
-                    
                 if (height < i + k < 0)
-                    continue;
+                    blue += copy[i][j + k].rgbtBlue;
+                    green += copy[i + k][j + k].rgbtGreen;
+                    red += copy[i + k][j + k].rgbtRed;
                 if (width < j + k < 0)
                     continue;
                 printf("\tkx: %i, ky: %i\n", i + k, j + k);
