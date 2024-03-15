@@ -29,17 +29,17 @@ int main(int argc, char *argv[])
         fclose(card);
         return 1;
     }
-    bool image_start = false;
+    int image_start = 0;
     // While there's still data left to read from the memory card
     while (fread(buffer, 1, sizeof(buffer), card) == 512)
     {
         if (buffer[0] == 0xff)
         {
             printf("Found image!\n");
-            image_start = true;
+            image_start = 1;
         }
         // Create JPEGs from the data
-        if (image_start == true)
+        if (image_start == 1)
         {
             fwrite(buffer, sizeof(buffer), 1, output);
         }
