@@ -24,9 +24,17 @@ int main(int argc, char *argv[])
     uint8_t buffer[BSIZE];
 
     // While there's still data left to read from the memory card
-    while (fread(buffer, 1, 512, card) == 512)
+    while (fread(buffer, 1, sizeof(buffer), card) == 512)
     {
         // Create JPEGs from the data
-        printf("%s", buffer);
+        FILE *output = fopen("output.jpg", "wb");
+        if (output == NULL)
+        {
+            fclose(card);
+            return 1;
+        }
+        fwrite(buffer, sizeof(buffer), 1, output);
     }
+    fclose(card);
+    fclose(output);
 }
