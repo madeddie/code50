@@ -36,10 +36,19 @@ int main(int argc, char *argv[])
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff)
         {
             printf("Found image!\n");
+            fclose(output);
             image_start = 1;
+            char *image_name[8];
+            sprintf(image_name, "%i.jpg\n", image_start);
+            FILE *output = fopen(image_name, "wb");
+            if (output == NULL)
+            {
+                fclose(card);
+                return 1;
+            }
         }
         // Create JPEGs from the data
-        if (image_start == 1)
+        if (image_start)
         {
             fwrite(buffer, sizeof(buffer), 1, output);
         }
