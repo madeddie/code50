@@ -1,9 +1,13 @@
 #include "helpers.h"
+#include "stdio.h"
 
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
 {
-    return;
+    for (int i = 0; i < height; i++)
+    {
+        printf("%i\n", image[0][i].rgbtBlue);
+    }
 }
 
 // Convert image to sepia
