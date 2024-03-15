@@ -30,6 +30,6 @@ There are 13 categories divided over 2 sections. Every category can only be used
     - Small Straight: four sequential dice (1-2-3-4, 2-3-4-5, or 3-4-5-6), score: 30
     - Large Straight: five sequential dice (1-2-3-4-5 or 2-3-4-5-6), score: 40
     - Yahtzee: all five dice the same, score: 50
-    - Chance Any combination	Sum of all dice
+    - Chance: ny combination, sum of all dice
 
 For more information on the rules, see https://en.wikipedia.org/wiki/Yahtzee#Rules
