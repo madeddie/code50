@@ -4,9 +4,14 @@
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
 {
-    for (int i = 0; i < height; i++)
+    for (int i = 0; i < 2; i++)
     {
-        printf("%i\n", image[0][i].rgbtBlue);
+        for (int j = 0; j < width; j++)
+        {
+            RGBTRIPLE pxl = image[i][j];
+            int avg = (pxl.rgbtBlue + pxl.rgbtGreen + pxl.rgbtRed) / 3;
+            printf("%i, %i, %i, %i\n", pxl.rgbtBlue, pxl.rgbtGreen, pxl.rgbtRed, avg);
+        }
     }
 }
 
