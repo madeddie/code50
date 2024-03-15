@@ -23,16 +23,16 @@ int main(int argc, char *argv[])
     // Create a buffer for a block of data
     uint8_t buffer[BSIZE];
 
+    FILE *output = fopen("output.jpg", "wb");
+    if (output == NULL)
+    {
+        fclose(card);
+        return 1;
+    }
     // While there's still data left to read from the memory card
     while (fread(buffer, 1, sizeof(buffer), card) == 512)
     {
         // Create JPEGs from the data
-        FILE *output = fopen("output.jpg", "wb");
-        if (output == NULL)
-        {
-            fclose(card);
-            return 1;
-        }
         fwrite(buffer, sizeof(buffer), 1, output);
     }
     fclose(card);
