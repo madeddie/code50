@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
             printf("Found image!\n");
             fclose(output);
             image_start = 1;
-            char *image_name[8];
+            char image_name[8];
             sprintf(image_name, "%i.jpg\n", image_start);
             FILE *output = fopen(image_name, "wb");
             if (output == NULL)
