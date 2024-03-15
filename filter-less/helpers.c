@@ -46,17 +46,18 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
             // printf("%i, %i\n", j, (width - 1) - j);
             RGBTRIPLE tmp = image[i][j];
             image[i][j] = image[i][(width - 1) - j];
-            image[i][width - j] = tmp;
+            image[i][(width - 1) - j] = tmp;
         }
     }
 }
 
 int main(void)
 {
-    int height = 3;
-    int width = 3;
-    RGBTRIPLE image[height][width];
-    image[0][0] = RGBTRIPLE {255, 0, 0};
+    int map[3] = {1, 2, 3};
+    for (int i = 0; i < 3 / 2; i++)
+    {
+        printf("x: %i,y: %i\n", map[i], map[3 - i]);
+    }
 }
 
 // Blur image
