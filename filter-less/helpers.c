@@ -51,6 +51,14 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
     }
 }
 
+int main(void)
+{
+    int height = 3;
+    int width = 3;
+    RGBTRIPLE image[height][width];
+    image[0][0] = {255, 0, 0};
+}
+
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
